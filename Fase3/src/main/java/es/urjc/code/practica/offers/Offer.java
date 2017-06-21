@@ -16,12 +16,18 @@ import javax.persistence.OneToOne;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import es.urjc.code.practica.product.Product;
+import es.urjc.code.practica.user.User.UserAttribute;
 
 @Entity
 public class Offer {
+	
+	public interface OfferAttribute{};
 
 	@Id
+	@JsonView(OfferAttribute.class)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 

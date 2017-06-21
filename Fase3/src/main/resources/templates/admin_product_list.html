@@ -46,7 +46,7 @@
                 	<ul>
                 		<li>
 					        <form action="/logout" method="post" class="text-right">				        
-								<input type="submit" value="Sign Out" />
+								<input type="submit" value="Sign Out" class="btn btn-info btn-xs"/>
 								<input type="hidden" name="_csrf" value="{{token}}"/>
 							</form>
 							
@@ -258,8 +258,11 @@
 
                                 </tbody>
                             </table>
-                            <button id="cargarmas" onclick="cargarPagina(paginaActual)" class="btn btn-primary btn-block">Cargar más</button>
+                            
                         </div>
+                        <div align="right">
+                        	<button id="cargarmas" onclick="cargarPagina(paginaActual)" class="btn btn-primary" >Cargar más</button>
+                    	</div>
                     </div>
                 </div>
                 

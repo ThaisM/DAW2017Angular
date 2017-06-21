@@ -1,0 +1,232 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Fase4_REST",
+		"_postman_id": "63403044-65ab-c13f-f5fd-561225f24ced",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:8443/api/logIn",
+			"request": {
+				"url": "https://localhost:8443/api/logIn",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/logOut",
+			"request": {
+				"url": "https://localhost:8443/api/logOut",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/",
+			"request": {
+				"url": "https://localhost:8443/api/products/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/?page=1",
+			"request": {
+				"url": "https://localhost:8443/api/products/?page=1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/2/",
+			"request": {
+				"url": "https://localhost:8443/api/products/2/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/",
+			"request": {
+				"url": "https://localhost:8443/api/products/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \n  \"name\": \"NEW_PRODUCT_REST\",\n  \"brand\": \"brand_REST\",\n  \"model\": \"model_REST\",\n  \"reference\": \"reference_REST\",\n  \"type\": \"type_REST\",\n  \"colour\": \"red\",\n  \"size\": \"M\",\n  \"sphere\": null,\n  \"radio\": null,\n  \"published\": false,\n  \"price\": 0.5,\n  \"quantity\": 5,\n  \"image\": \"producto_REST\",\n  \"description\": \"description_REST\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/products/1/",
+			"request": {
+				"url": "https://localhost:8443/api/products/1/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/users/",
+			"request": {
+				"url": "https://localhost:8443/api/users/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/users/2/",
+			"request": {
+				"url": "https://localhost:8443/api/users/2/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/users/",
+			"request": {
+				"url": "https://localhost:8443/api/users/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"userrest2\",\n  \"passwordHash\": \"pass\",\n  \"surnames\": null,\n  \"email\": null,\n  \"birthdate\": null,\n  \"address\": null,\n  \"address2\": null,\n  \"zipcode\": 0,\n  \"locality\": null,\n  \"province\": null,\n  \"country\": null,\n  \"phone\": null,\n  \"nid\": null,\n  \"other\": null,\n  \"roles\": [\n    \"ROLE_USER\"\n  ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/users/4/",
+			"request": {
+				"url": "https://localhost:8443/api/users/4/",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/orders/",
+			"request": {
+				"url": "https://localhost:8443/api/orders/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/orders/2/",
+			"request": {
+				"url": "https://localhost:8443/api/orders/2/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/orders/2/",
+			"request": {
+				"url": "https://localhost:8443/api/orders/2/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 2,\n  \"ordername\": \"order2_MODIFIED\",\n  \"user\": \"user2\",\n  \"paymentmethod\": \"paymentcard2_MODIFIED\",\n  \"order\": [\n    {\n      \"id\": 2,\n      \"name\": \"name2_MODIFIED\",\n      \"price\": 20.4,\n      \"quantity\": 1,\n      \"size\": \"size1\",\n      \"sphere\": \"0\",\n      \"radio\": \"0\",\n      \"diameter\": \"0\",\n      \"eye\": \"0\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"name3\",\n      \"price\": 20.4,\n      \"quantity\": 1,\n      \"size\": \"size1\",\n      \"sphere\": \"0\",\n      \"radio\": \"0\",\n      \"diameter\": \"0\",\n      \"eye\": \"0\"\n    }\n  ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/orders/4/",
+			"request": {
+				"url": "https://localhost:8443/api/orders/4/",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/api/orders/",
+			"request": {
+				"url": "https://localhost:8443/api/orders/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ordername\": \"order1\",\n  \"user\": \"userrest2\",\n  \"paymentmethod\": \"paymentcard1\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

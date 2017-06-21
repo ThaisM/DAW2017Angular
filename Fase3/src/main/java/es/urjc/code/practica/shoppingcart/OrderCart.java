@@ -6,23 +6,44 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import es.urjc.code.practica.user.User;
+import es.urjc.code.practica.user.User.UserAttribute;
 
 @Entity
 public class OrderCart{
 	
+	public interface OrderCartAttribute{};
+	
 	@Id
+	@JsonView(OrderCartAttribute.class)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
 	//Atributos de Cart ***/
+	@JsonView(OrderCartAttribute.class)
 	private String name;
+	
+	@JsonView(OrderCartAttribute.class)
 	private Double price;
+	
+	@JsonView(OrderCartAttribute.class)
 	private Integer quantity;
+	
+	@JsonView(OrderCartAttribute.class)
 	private String size;
+	
+	@JsonView(OrderCartAttribute.class)
 	private String sphere;
+	
+	@JsonView(OrderCartAttribute.class)
 	private String radio;
+	
+	@JsonView(OrderCartAttribute.class)
 	private String diameter;
+	
+	@JsonView(OrderCartAttribute.class)
 	private String eye;
 	
 	/*@ManyToOne
