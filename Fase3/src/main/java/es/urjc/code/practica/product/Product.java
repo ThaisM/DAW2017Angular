@@ -28,6 +28,7 @@ public class Product {
 	
 	@JsonView(ProductAttribute.class)
 	private String model;
+
 	
 	@JsonView(ProductAttribute.class)
 	private String reference;
@@ -35,6 +36,9 @@ public class Product {
 	// ***** Acotar type
 	@JsonView(ProductAttribute.class)
 	private String type;
+	
+	@JsonView(ProductAttribute.class)
+	private String subtype;
 	
 	@JsonView(ProductAttribute.class)
 	private String colour;
@@ -65,19 +69,23 @@ public class Product {
 	@JsonView(ProductAttribute.class)
 	private String description;
 
+	/*** Description ***/
+	@JsonView(ProductAttribute.class)
+	private Boolean offer;
 	/*** Category ***/
 	
 	public Product(){}
 
-	public Product(String name, String brand, String model, String reference, String type, String colour, 
+	public Product(String name, String brand, String model, String reference, String type, String subtype, String colour, 
 			String size, String sphere, String radio, Boolean published, Double price, Integer quantity, 
-			String image, String description) {
+			String image, String description, boolean offer) {
 		super();
 		this.name = name;
 		this.brand = brand;
 		this.model = model;
 		this.reference = reference;
 		this.type = type;
+		this.subtype=subtype;
 		this.colour = colour;
 		this.size = size;
 		this.sphere = sphere;
@@ -87,6 +95,7 @@ public class Product {
 		this.quantity = quantity;
 		this.image = image;
 		this.description = description;
+		this.offer = offer;
 	}
 	
 	/*
@@ -142,6 +151,14 @@ public class Product {
 		this.description = description;
 	}
 	*/
+
+	public String getSubtype() {
+		return subtype;
+	}
+
+	public void setSubtype(String subtype) {
+		this.subtype = subtype;
+	}
 
 	public long getId() {
 		return id;
