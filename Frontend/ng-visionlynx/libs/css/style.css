@@ -1,0 +1,413 @@
+/*LOGIN FORM*/
+.well{
+	border-radius: 0px;
+	box-shadow: none;
+	border: 1px solid #eee;
+}
+
+.btn-primary{
+	background-color: black;
+	border-color: black;
+	border-radius: 0px;
+	text-transform: uppercase;
+}
+
+.btn-primary:hover{
+	background-color: #555;
+}
+
+
+/*CART*/
+.breadcrumb{
+	border-radius: 0px;
+}
+
+.nav-tabs > li > a{
+	border-radius: 0px;
+}
+
+.panel-info > .panel-heading{
+	border-radius: 0px;
+	background-color: #f5f5f5;
+	border-color: #f5f5f5;
+}
+
+.panel-info{
+	border-color: #ddd;
+	border-radius: 0px;
+	border-top: 0px; 
+}
+
+.btn-success.focus, .btn-success{
+	border-radius: 0px;
+	text-transform: uppercase;
+}
+
+
+/*CREATE ACCOUNT*/
+
+#form_create_account .col-lg-6 > .col-lg-12{
+	padding: 0;
+	margin-right:10px;
+}
+
+#form_create_account  .col-lg-6{
+	margin: 10px 0;
+}
+
+#form_create_account .account-creation{
+	float: left;
+	width: 100%;
+}
+
+#form_create_account .btn-primary{
+	float: right;
+	margin-top: 20px;
+}
+
+
+@media (min-width: 1136px) and (max-width: 1280px) {
+    #form_create_account .col-lg-6 > .col-lg-12{
+		width: 100%;
+	}
+	#form_create_account .col-lg-6 > .col-lg-4{
+		width: 33.333%;
+		float: left;
+	}
+}
+
+
+@media (min-width: 960px) and (max-width: 1135px) {
+	#form_create_account .col-lg-6 > .col-lg-12{
+		width: 100%;
+	}
+	#form_create_account .col-lg-6 > .col-lg-4{
+		width: 33.333%;
+		float: left;
+	}
+	
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+	#form_create_account .col-lg-6 > .col-lg-12{
+		width: 100%;
+	}
+	#form_create_account .col-lg-6 > .col-lg-4{
+		width: 33.333%;
+		float: left;
+	}
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+	#form_create_account .col-lg-6 > .col-lg-12{
+		padding: 15px 0 0 0; margin-right:50%;
+	}
+	#form_create_account .col-lg-6 > .col-lg-4{
+		width: 33.333%;
+		float: left;
+	}
+}
+
+@media (max-width: 479px) {
+	#form_create_account .col-lg-6 > .col-lg-12{
+		padding: 15px 0 0 0; margin-right:50%;
+	}
+}
+
+
+
+/*PRODUCT ADD CONTACTLENS*/
+
+#products .attribute_list{
+	border:1px solid #ddd;
+}
+#products .btn-success.focus, .btn-success{
+	background-color: black;
+	border-color: black;
+	border-radius: 0px;
+	text-transform: uppercase;
+}
+#products .btn-success.focus, .btn-success:hover{
+	background-color: #555;
+}
+
+#products .form-control{
+	border:1px solid #eee !important;
+}
+
+/*USER ORDERS*/
+.panel{
+	border-radius: 0px;
+}
+.panel-table {
+    display:table;
+}
+.panel-table > .panel-heading {
+    display: table-header-group;
+    background: transparent;
+}
+.panel-table > .panel-body {
+    display: table-row-group;
+}
+.panel-table > .panel-body:before,
+.panel-table > .panel-body:after {
+    content:none;
+}
+.panel-table > .panel-footer {
+    display: table-footer-group;
+    background: transparent;
+}
+.panel-table > div > .tr {
+    display: table-row;
+}
+.panel-table > div:last-child > .tr:last-child > .td {
+    border-bottom: none;
+}
+.panel-table .td {
+    display: table-cell;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-left: none;
+}
+.panel-table .td:last-child {
+    border-right: none;
+}
+.panel-table > .panel-heading > .tr > .td,
+.panel-table > .panel-footer > .tr > .td {
+    background-color: #f5f5f5;
+}
+.panel-table > .panel-heading > .tr > .td:first-child {
+    border-radius: 4px 0 0 0;
+}
+.panel-table > .panel-heading > .tr > .td:last-child {
+    border-radius: 0 4px 0 0;
+}
+.panel-table > .panel-footer > .tr > .td:first-child {
+    border-radius: 0 0 0 4px;
+}
+.panel-table > .panel-footer > .tr > .td:last-child {
+    border-radius: 0 0 4px 0;
+}
+
+/*USSER OFFERS*/
+.col-item {
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+  margin-bottom:12px;
+}
+#offers .col-item .options {
+  position:absolute;
+  top:6px;
+  right:22px;
+}
+#offers .col-item .photo {
+  overflow: hidden;
+}
+#offers .col-item .photo .options {
+  display:none;
+}
+#offers .col-item .photo img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#offers .col-item .options-cart {
+  position:absolute;
+  left:22px;
+  top:6px;
+  display:none;
+}
+#offers .col-item .photo:hover .options,
+#offers .col-item .photo:hover .options-cart {
+  display:block;
+  -webkit-animation: fadeIn .5s ease;
+  -moz-animation: fadeIn .5s ease;
+  -ms-animation: fadeIn .5s ease;
+  -o-animation: fadeIn .5s ease;
+  animation: fadeIn .5s ease;
+}
+#offers .col-item .options-cart-round {
+  position:absolute;
+  left:42%;
+  top:22%;
+  display:none;
+}
+#offers .col-item .options-cart-round button {
+  border-radius: 50%;
+  padding:14px 16px;
+  
+}
+#offers .col-item .options-cart-round button .fa {
+  font-size:22px;
+}
+#offers .col-item .photo:hover .options-cart-round {
+  display:block;
+  -webkit-animation: fadeInDown .5s ease;
+  -moz-animation: fadeInDown .5s ease;
+  -ms-animation: fadeInDown .5s ease;
+  -o-animation: fadeInDown .5s ease;
+  animation: fadeInDown .5s ease;
+}
+.col-item .info {
+  padding: 10px;
+  margin-top: 1px;
+}
+#offers .col-item .price-details {
+  width: 100%;
+  margin-top: 5px;
+}
+#offers .col-item .price-details h1 {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  float:left;
+}
+#offers .col-item .price-details .details {
+  margin-bottom: 0px;
+  font-size:12px;
+}
+#offers .col-item .price-details span {
+  float:right;
+}
+#offers .col-item .price-details .price-new {
+  font-size:16px;
+}
+#offers .col-item .price-details .price-old {
+  font-size:18px;
+  text-decoration:line-through;
+}
+
+
+/*PROFILE*/
+/*#password .modal-dialog{
+	float: left;
+	width: 100%;
+	margin-top: -150px;
+}
+#password .modal-content{
+	box-shadow: none;
+	border-radius: 0px;
+	border-color: #e5e5e5;
+}
+
+#password .modal-header{
+	background-color: #f5f5f5;
+}
+#password .modal-header h3{
+	margin-top: 10px;
+}
+#password .close{
+	display: none;
+}
+#password .modal-footer{
+	border-top: 0px;
+}
+*/
+/*PRODUCTS*/
+
+.col-item .separator {
+  border-top: 1px solid #E1E1E1;
+}
+
+.col-item .clear-left {
+  clear: left;
+}
+.col-item .separator a {
+  text-decoration:none;
+}
+.col-item .separator p {
+  margin-bottom: 0;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.col-item .separator p i {
+  margin-right: 5px;
+}
+.col-item .btn-add {
+  width: 60%;
+  float: left;
+}
+.col-item .btn-add a {
+  display:inline-block !important;
+}
+.col-item .btn-add {
+  border-right: 1px solid #E1E1E1;
+}
+.col-item .btn-details {
+  width: 40%;
+  float: left;
+  padding-left: 10px;
+}
+.col-item .btn-details a {
+  display:inline-block !important;
+}
+.col-item .btn-details a:first-child {
+  margin-right:12px;
+}
+
+/*ADMIN*/
+#admin-products .row{margin-top:40px; padding: 0 10px;}
+#admin-products .clickable{cursor: pointer;  }
+#admin-products .panel-heading div {margin-top: -18px; font-size: 15px;}
+#admin-products .panel-heading div span{margin-left:5px;}
+#admin-products .panel-body{display: none;}
+#admin-products .panel-primary > .panel-heading{background-color: black; border-radius: 0px;}
+#admin-products .panel-primary{border-color:#eee;}
+#admin-products .add-product{float: right; margin:15px;}
+#admin-products .product-image{border:1px solid #ddd; height: 70px; width: 70px;}
+
+/*ADMIN ADD PRODUCT*/
+#admin-add-product .row{margin:0px;}
+
+#admin-add-product .tab-content{
+  border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;border-right: 1px solid #ddd;
+  overflow: hidden; height: auto;
+  }
+#admin-add-product .form-control{border: 1px solid #ddd !important;}
+#admin-add-product h3{padding: 20px 0;}
+
+#admin-add-product #div1, #admin-add-product #div2{
+  background-color: #f5f5f5;height: auto;overflow: hidden;padding:25px 0 10px 0;margin-top: 20px;}
+.Product_Button
+{
+    padding:20px;
+    border:1px solid #fff;
+    float: right;
+}
+.margin50{
+    margin-top:50px
+}
+.productbtn:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e114";
+    float: right;
+    margin-left: 15px;
+  }
+  /* Icon when the collapsible content is hidden */
+  .productbtn.collapsed:after {
+    content: "\e080";
+  }
+  .width450
+  {
+      width:450px
+  }
+  .margin50 {
+    margin-top:50px;   
+}
+/*input[type=radio], input[type=checkbox]
+{
+    margin:4px !important;
+}*/
+.dimentions-width, .dimentions-height
+{
+    width:90%;
+    display:initial;
+}
+
+
+.col-lg-10> .col-lg-3{
+  padding:0px;
+}

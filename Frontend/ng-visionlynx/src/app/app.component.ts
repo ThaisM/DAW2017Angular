@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { Router} from "@angular/router";
+import {Info} from "app/classes/Info";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './templates/nav.html'
 })
 export class AppComponent {
 
-  constructor(_router:Router){
+  globalInfo: Info;
 
-  }
-
-  title = 'app';
 }

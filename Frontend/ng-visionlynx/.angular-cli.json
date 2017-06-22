@@ -19,7 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../libs/css/admin.css",
+        "../libs/css/animate.css",
+        "../libs/css/carouselnew.css",
+        "../libs/css/dinacss.css",
+        "../libs/css/estilos.css",
+        "../libs/css/menunavbar.css",
+        "../libs/css/misofertas.css",
+        "../libs/css/mispedidos.css",
+        "../libs/css/perfil.css",
+        "../libs/css/style.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
