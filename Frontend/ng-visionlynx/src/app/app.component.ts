@@ -1,12 +1,49 @@
 import { Component } from '@angular/core';
 import {Info} from "app/classes/Info";
+import {LoginService} from "./services/login.service";
+import {Router} from "@angular/router";
+import {ProductService} from "./services/product.service";
+import {Product} from "./classes/Product";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './templates/nav.html'
+    selector: 'app-root',
+    templateUrl: './templates/nav.html'
 })
 export class AppComponent {
 
-  globalInfo: Info;
+    globalInfo: Info;
+    products: Product[];
+
+    constructor(private _loginService: LoginService, private router: Router,
+        private _productService: ProductService){
+
+    }
+
+    ngOnInit(){
+        this.globalInfo = Info;
+        this._productService.getAllProducts().subscribe(data => {
+            this.products = data;
+            console.log(data);
+        }, error => {
+            console.log(error);
+        })
+    }
+
+    logOut(){
+        this._loginService.logOut().subscribe(
+            response => {
+                Info.userInfo = null;
+                Info.isAdminLogged = false;
+                this.router.navigate(['/index']);
+            },
+        error => {
+            Info.userInfo = null;
+            Info.isAdminLogged = false;
+        }
+
+        );
+    }
+
+
 
 }

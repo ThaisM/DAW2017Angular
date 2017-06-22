@@ -69,10 +69,9 @@ public class Product {
 	@JsonView(ProductAttribute.class)
 	private String description;
 
-	/*** Description ***/
+	/*** OFFER ***/
 	@JsonView(ProductAttribute.class)
 	private Boolean offer;
-	/*** Category ***/
 	
 	public Product(){}
 

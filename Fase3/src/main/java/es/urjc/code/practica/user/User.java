@@ -30,7 +30,6 @@ public class User {
 	@JsonView(UserAttribute.class)
 	private String name;
 	
-	@JsonView(UserAttribute.class)
 	private String passwordHash;
 	
 	//@JsonView(UserAttribute.class)
@@ -62,7 +61,7 @@ public class User {
 			private String address2;
 			
 			@JsonView(UserAttribute.class)
-			private int zipcode;
+			private long zipcode;
 			
 			@JsonView(UserAttribute.class)
 			private String locality;
@@ -115,7 +114,7 @@ public class User {
 	}
 	
 	public User(String name, String surnames , String email, String password, String birthdate, 
-				String address, int zipcode, String locality, String province, String country, String phone, String nid, String... roles){
+				String address, long zipcode, String locality, String province, String country, String phone, String nid, String... roles){
 		
 		this.name = name;
 		this.surnames = surnames;
@@ -222,11 +221,11 @@ public class User {
 		this.address2 = address2;
 	}
 
-	public int getZipcode() {
+	public long getZipcode() {
 		return zipcode;
 	}
 
-	public void setZipcode(int zipcode) {
+	public void setZipcode(long zipcode) {
 		this.zipcode = zipcode;
 	}
 

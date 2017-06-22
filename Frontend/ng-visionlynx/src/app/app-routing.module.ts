@@ -5,14 +5,14 @@ import {LoginComponent} from "./components/login.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/index', pathMatch: 'full'},
-  { path: 'index', component: MainpageComponent},
-  { path: 'login', component: LoginComponent}
+    { path: '', redirectTo: '/index', pathMatch: 'full'},
+    { path: 'index', component: MainpageComponent},
+    { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes)],
-  exports: [ RouterModule ]
+    imports: [ RouterModule.forRoot(routes)],
+    exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
 
