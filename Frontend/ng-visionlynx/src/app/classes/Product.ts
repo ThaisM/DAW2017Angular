@@ -15,4 +15,14 @@ export class Product{
     image: string;
     description: string;
     offer: boolean;
+
+    public static compare(product1: Product, product2: Product):number{
+        if(product1.price > product2.price){
+            return 1;
+        }
+        if(product1.price < product2.price){
+            return -1;
+        }
+        return 0;
+    }
 }

@@ -7,7 +7,6 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +18,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.fasterxml.jackson.annotation.JsonView;
-
 import es.urjc.code.practica.images.Image;
 import es.urjc.code.practica.images.ImageRepository;
 import es.urjc.code.practica.user.User;
+import es.urjc.code.practica.user.UserComponent;
+import es.urjc.code.practica.shoppingcart.OrderCart;
 
 @RestController
 public class ShoppingCartRestController {
@@ -39,7 +38,9 @@ public class ShoppingCartRestController {
 	@Autowired
 	private OrderCartRepository cartrepository;
 	
-	private List <OrderCart> listaproductoscarrito;
+	@Autowired
+	private UserComponent userComponent;
+	
 
 	
 	@JsonView(ShoppingCartView.class)
@@ -102,8 +103,8 @@ public class ShoppingCartRestController {
 	public OrderSummary createOrder(@RequestBody OrderSummary order) {
 		
 	if (order != null) {
-		if (listaproductoscarrito !=null){
-			for (OrderCart cart: listaproductoscarrito){
+		if (userComponent.getListProducts().size() > 0){
+			for (OrderCart cart: userComponent.getListProducts()){
 				cartrepository.saveAndFlush(cart);
 				order.getOrder().add(cart);
 			}
@@ -112,7 +113,7 @@ public class ShoppingCartRestController {
 		
 		repository.save(order);
 		
-		listaproductoscarrito = null;
+		userComponent.setListProducts(new ArrayList<OrderCart>());
 		//Ponemos la lista a null una vez que ya se ha guardado el pedido en base de datos 
 		return order;
 	}
@@ -167,8 +168,8 @@ public class ShoppingCartRestController {
 	@RequestMapping("/api/listcart/")
 	public @ResponseBody List<OrderCart> getMemoryListCart(Pageable page) {	
 		
-		System.out.println(listaproductoscarrito);
-		return listaproductoscarrito;
+		System.out.println(userComponent.getListProducts());
+		return userComponent.getListProducts();
 	}
 	
 	
@@ -182,13 +183,11 @@ public class ShoppingCartRestController {
 	public String addListCart (@RequestBody OrderCart cart){
 		
 		/* Código igual que en Controller normal - susceptible de pasar a Servicio - solo esta parte */
-		if (listaproductoscarrito == null) {
-
-			listaproductoscarrito = new ArrayList<>();
-			listaproductoscarrito.add(cart);
+		if (userComponent.getListProducts().size() == 0) {
+			userComponent.getListProducts().add(cart);
 		} else {
 			boolean flag = false;
-			for (OrderCart ocart : listaproductoscarrito) {
+			for (OrderCart ocart : userComponent.getListProducts()) {
 
 				if (ocart.getName() == cart.getName()) {
 					ocart.setQuantity(ocart.getQuantity() + cart.getQuantity());
@@ -197,7 +196,7 @@ public class ShoppingCartRestController {
 				}
 			}
 			if (flag == false) {
-				listaproductoscarrito.add(cart);
+				userComponent.getListProducts().add(cart);
 			}
 		}
 		/*Fin código repetido*/
@@ -209,10 +208,10 @@ public class ShoppingCartRestController {
     public String removeCart (@PathVariable String name, HttpSession session, Model model){
 		
     	//List <Cart> lst = (List<Cart>) session.getAttribute("cart");	
-    	if (listaproductoscarrito != null){
-    		for (OrderCart cart: listaproductoscarrito){
+    	if (userComponent.getListProducts() != null){
+    		for (OrderCart cart: userComponent.getListProducts()){
     			if (cart.getName().equals(name)){
-    				listaproductoscarrito.remove(cart);
+    				userComponent.getListProducts().remove(cart);
     				break;
     			}
     		}	

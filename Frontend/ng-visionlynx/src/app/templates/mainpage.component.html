@@ -51,24 +51,43 @@
           </div>
         </div>
       </div>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div *ngIf="bestProducts.length != 0" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
             <div class="row">
-              <div class="col-sm-4">
+                <div *ngIf="bestProducts.length >= 1">
+                    <div class="col-sm-4">
+                        <div class="col-item">
+                            <div class="photo"> <img [src]="bestProducts[0].image" class="img-responsive" alt="a" /> </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="price col-md-12">
+                                        <h5>
+                                            {{bestProducts[0].name}}</h5>
+                                        <h5 class="price-text-color">
+                                            {{bestProducts[0].price}} $</h5>
+                                    </div>
+                                </div>
+                                <div class="separator clear-left">
+                                    <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
+                                    <p class="btn-details"> <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com">More details</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <div *ngIf="bestProducts.length >= 2" class="col-sm-4">
                 <div class="col-item">
                   <div class="photo"> <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> </div>
                   <div class="info">
                     <div class="row">
                       <div class="price col-md-12">
                         <h5>
-                          Sample Product</h5>
+                            {{bestProducts[1].name}}</h5>
                         <h5 class="price-text-color">
-                          $199.99</h5> </div>
-                      <div class="rating hidden-sm col-md-6"> <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="fa fa-star"></i> </div>
+                            {{bestProducts[1].price}} $</h5> </div>
                     </div>
                     <div class="separator clear-left">
                       <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
@@ -78,40 +97,17 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div *ngIf="bestProducts.length >= 3" class="col-sm-4">
                 <div class="col-item">
                   <div class="photo"> <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> </div>
                   <div class="info">
-                    <div class="row">
-                      <div class="price col-md-12">
-                        <h5>
-                          Product Example</h5>
-                        <h5 class="price-text-color">
-                          $249.99</h5> </div>
-                      <div class="rating hidden-sm col-md-6"> </div>
-                    </div>
-                    <div class="separator clear-left">
-                      <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
-                      <p class="btn-details"> <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com">More details</a></p>
-                    </div>
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo"> <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> </div>
-                  <div class="info">
-                    <div class="row">
-                      <div class="price col-md-12">
-                        <h5>
-                          Next Sample Product</h5>
-                        <h5 class="price-text-color">
-                          $149.99</h5> </div>
-                      <div class="rating hidden-sm col-md-6"> <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="fa fa-star"></i> </div>
-                    </div>
+                      <div class="row">
+                          <div class="price col-md-12">
+                              <h5>
+                                  {{bestProducts[2].name}}</h5>
+                              <h5 class="price-text-color">
+                                  {{bestProducts[2].price}} $</h5> </div>
+                      </div>
                     <div class="separator clear-left">
                       <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
                       <p class="btn-details"> <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com">More details</a></p>
@@ -124,20 +120,18 @@
           </div>
           <div class="item">
             <div class="row">
-              <div class="col-sm-4">
+              <div *ngIf="bestProducts.length >= 4" class="col-sm-4">
                 <div class="col-item">
                   <div class="photo"> <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> </div>
                   <div class="info">
-                    <div class="row">
-                      <div class="price col-md-12">
-                        <h5>
-                          Product with Variants</h5>
-                        <h5 class="price-text-color">
-                          $199.99</h5> </div>
-                      <div class="rating hidden-sm col-md-6"> <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="fa fa-star"></i> </div>
-                    </div>
+                      <div class="row">
+                          <div class="price col-md-12">
+                              <h5>
+                                  {{bestProducts[3].name}}</h5>
+                              <h5 class="price-text-color">
+                                  {{bestProducts[3].price}} $</h5> </div>
+                          <div class="rating hidden-sm col-md-6"> </div>
+                      </div>
                     <div class="separator clear-left">
                       <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
                       <p class="btn-details"> <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com">More details</a></p>
@@ -146,18 +140,18 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div *ngIf="bestProducts.length >= 5" class="col-sm-4">
                 <div class="col-item">
                   <div class="photo"> <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> </div>
                   <div class="info">
-                    <div class="row">
-                      <div class="price col-md-12">
-                        <h5>
-                          Grouped Product</h5>
-                        <h5 class="price-text-color">
-                          $249.99</h5> </div>
-                      <div class="rating hidden-sm col-md-6"> </div>
-                    </div>
+                      <div class="row">
+                          <div class="price col-md-12">
+                              <h5>
+                                  {{bestProducts[4].name}}</h5>
+                              <h5 class="price-text-color">
+                                  {{bestProducts[4].price}} $</h5> </div>
+                          <div class="rating hidden-sm col-md-6"> </div>
+                      </div>
                     <div class="separator clear-left">
                       <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
                       <p class="btn-details"> <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com">More details</a></p>
@@ -166,20 +160,18 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div *ngIf="bestProducts.length >= 6" class="col-sm-4">
                 <div class="col-item">
                   <div class="photo"> <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> </div>
                   <div class="info">
-                    <div class="row">
-                      <div class="price col-md-12">
-                        <h5>
-                          Product with Variants</h5>
-                        <h5 class="price-text-color">
-                          $149.99</h5> </div>
-                      <div class="rating hidden-sm col-md-6"> <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                      </i><i class="fa fa-star"></i> </div>
-                    </div>
+                      <div class="row">
+                          <div class="price col-md-12">
+                              <h5>
+                                  {{bestProducts[5].name}}</h5>
+                              <h5 class="price-text-color">
+                                  {{bestProducts[5].price}} $</h5> </div>
+                          <div class="rating hidden-sm col-md-6"> </div>
+                      </div>
                     <div class="separator clear-left">
                       <p class="btn-add"> <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com">Add to cart</a></p>
                       <p class="btn-details"> <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com">More details</a></p>
