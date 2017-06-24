@@ -279,6 +279,14 @@ public class Product {
 		this.description = description;
 	}
 
+	public Boolean getOffer() {
+		return offer;
+	}
+
+	public void setOffer(Boolean offer) {
+		this.offer = offer;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [ id: " + id + "\n" + 

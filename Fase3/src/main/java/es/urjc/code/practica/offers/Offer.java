@@ -31,21 +31,16 @@ public class Offer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-    private String category;
-
-    private String name;
-
-    private Double price;
+	@OneToOne
+    private Product product;
     
     	public Offer(){
     		
     	}
     	
-    	public Offer( String category, String name, Double price){
-    		
-    		this.category=category;
-    		this.name=name;
-    		this.price=price;
+    	public Offer(Product product){
+
+    		this.product=product;
     	}
 
 
@@ -57,29 +52,13 @@ public class Offer {
 			this.id = id;
 		}
 
-		public String getCategory(){
-	        return category;
-	    }
+		public Product getProduct() {
+			return product;
+		}
 
-	    public void setCategory(String category){
-	        this.category = category;
-	    }
-
-	    public String getName() {
-	        return name;
-	    }
-
-	    public void setName(String name) {
-	        this.name= name;
-	    }
-
-	    public Double getPrice() {
-	        return price;
-	    }
-
-	    public void setPrice(Double price) {
-	        this.price= price;
-	    }
+		public void setProduct(Product product) {
+			this.product = product;
+		}
 
 
 
@@ -113,8 +92,7 @@ public class Offer {
 
 	    @Override
 	    public String toString() {
-	        return "Offer [id=" + id + ", name=" + name+ ", price=" + price
-	                +"]";
+	        return "Offer [id=" + id + ", name=" + product +"]";
 	    }
 	
 

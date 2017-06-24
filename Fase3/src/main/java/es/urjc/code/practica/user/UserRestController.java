@@ -34,7 +34,7 @@ public class UserRestController {
 	
 	@JsonView(UserView.class)
 	@RequestMapping(value = "/api/users/", method= RequestMethod.GET)
-	public List<User> getProductsPage(Pageable page){
+	public List<User> getUsers(Pageable page){
 		
 		
 		List<User> listUsers = repository.findAll(page).getContent();
@@ -43,7 +43,7 @@ public class UserRestController {
 	
 	@RequestMapping(value = "/api/users/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public User createBook(@RequestBody User user) {
+	public User createUser(@RequestBody User user) {
 
 		repository.save(user);
 
@@ -80,10 +80,10 @@ public class UserRestController {
 	}
 
 	@RequestMapping(value = "/api/users/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<User> deleteUser(@PathVariable long id) {
+	public ResponseEntity<Boolean> deleteUser(@PathVariable long id) {
 
 		repository.delete(id);
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(true, HttpStatus.OK);
 	}
 
 }

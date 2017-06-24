@@ -37,7 +37,7 @@ import es.urjc.code.practica.user.UserComponent;
 
 @Controller
 public class ProductController {
-	
+
 	@Autowired
 	private ProductsRepository repository;
 	
@@ -53,62 +53,6 @@ public class ProductController {
 	
 	@PostConstruct
 	public void init() {
-		repository.save(new Product("sunglasses1", "brand1", "model1", "reference1", "gafas de sol","Marca","red", "M", null, null, false, 2.0, 5, "http://placehold.it/350x260", "description1", true));
-		repository.save(new Product("sunglasses2", "brand2", "model2", "reference2", "gafas de sol","Marca","black", "S", null, null, false, 1.0, 5, "http://placehold.it/350x260", "description2", false));
-		repository.save(new Product("sunglasses3", "brand3", "model3", "reference3", "gafas de sol", "Marca","blue", "XL", null, null, false, 0.50, 5, "http://placehold.it/350x260", "description3", false));
-		repository.save(new Product("sunglasses4", "brand4", "model4", "reference4", "gafas de sol", "Marca","red", "M", null, null, false, 4.50, 5, "http://placehold.it/350x260", "description4", true));
-		repository.save(new Product("sunglasses5", "brand5", "model5", "reference5", "gafas de sol", "Marca","red", "M", null, null, false, 7.50, 5, "http://placehold.it/350x260", "description5", false));
-		repository.save(new Product("lents6", "brand6", "model6", "reference6", "lentillas", "Diarias", null, null, "0.25", "8.50", false, 3.50, 5, "http://placehold.it/350x260", "description6", true));
-		
-		repository.save(new Product("lents7", "brand7", "model7", "reference7", "lentillas", "Diarias", null, null," 0.25", "8.50", false, 8.0, 5, "http://placehold.it/350x260", "description7", true));
-		repository.save(new Product("lents8", "brand8", "model8", "reference8", "lentillas", "Mensuales", null, null, "0.25", "8.50", false, 2.50, 5, "http://placehold.it/350x260", "description8", true));
-		repository.save(new Product("lents9", "brand9", "model9", "reference9", "lentillas", "Quincenales", null, null, "0.25", "8.50", false, 1.50, 5, "http://placehold.it/350x260", "description9", true));
-		repository.save(new Product("lents10", "brand10", "model10", "reference10", "lentillas", "Quincenales", null, null, "0.25", "8.50", false, 1.50, 5, "http://placehold.it/350x260", "description10", false));
-		repository.save(new Product("accesory11", "brand11", "model11", "reference11", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11", true));
-		repository.save(new Product("accesory12", "brand12", "model12", "reference12", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", true));
-		repository.save(new Product("accesory13", "brand13", "model13", "reference13", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 2.50, 5, "http://placehold.it/350x260", "description13", true));
-		repository.save(new Product("accesory14", "brand14", "model14", "reference14", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", false));
-		repository.save(new Product("accesory15", "brand15", "model15", "reference15", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 0.70, 5, "http://placehold.it/350x260", "description15", true));
-	    //Hasta aquí son 11 productos
-		
-		//Metemos los siguientes nuevos para probar la paginación
-		
-		repository.save(new Product("accesory16", "brand11", "model11", "reference11", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11", false));
-		repository.save(new Product("accesory17", "brand12", "model12", "reference12", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", true));
-		repository.save(new Product("accesory18", "brand13", "model13", "reference13", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description13", false));
-		repository.save(new Product("accesory19", "brand14", "model14", "reference14", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", true));
-		repository.save(new Product("accesory20", "brand15", "model15", "reference15", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description15", false));
-		repository.save(new Product("accesory21", "brand11", "model11", "reference11", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11",false));
-		repository.save(new Product("accesory22", "brand12", "model12", "reference12", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", false));
-		repository.save(new Product("accesory23", "brand13", "model13", "reference13", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description13", true));
-		repository.save(new Product("accesory24", "brand14", "model14", "reference14", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", true));
-		repository.save(new Product("accesory25", "brand15", "model15", "reference15", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description15", true));
-		repository.save(new Product("accesory26", "brand11", "model11", "reference11", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11", false));
-		repository.save(new Product("accesory27", "brand12", "model12", "reference12", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", true));
-		repository.save(new Product("accesory28", "brand13", "model13", "reference13", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description13", true));
-		repository.save(new Product("accesory29", "brand14", "model14", "reference14", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", true));
-		repository.save(new Product("accesory30", "brand15", "model15", "reference15", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description15", false));
-	
-		
-		//Guardamos producto ejemplo para mostrar las lentillas
-		repository.save(new Product("ONE DAY ACUVUE MOIST 30 UNIDADES",
-				                    "Acuvue","model1","reference1","lentillas","Quincenales","bluecolor",
-				                    "noSize","noSpherePredef","noRadioPredef",false,19.34,5,"producto12",
-				                    "Referencia: LA3 " + "\n" + "Lente de contacto de hidrogel. El componente usado en su fabricación es altamente hidratante y aporta gran comodidad a lo largo del día."
-				                    + " Contiene filtro UV. Cada caja contiene 30 unidades.", false));
-		
-		//SEGUNDO EJEMPLO: RAY BAN 4165 601/71 55
-		repository.save(new Product("RAY BAN 4165 601/71 55",
-                "rayban","model1","reference1","gafas de sol","Marca","redcolor",
-                "medium","0","0",false,
-                61.60,5,"/producto12",
-                "Referencia: 21006065 ", false));
-		
-		repository.save(new Product("LIMPIA GAFAS AROMA MANZANA",
-                "visionlynx","model1","reference1","liquidosyaccesorios", "Liquidos","nocolor",
-                "nosize","0","0",false,
-                3.20,5,"producto12",
-                "Referencia: 21006067 ", true));
 		
 	}
    

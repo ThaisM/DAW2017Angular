@@ -155,10 +155,10 @@ public class ShoppingCartRestController {
 	}
 
 	@RequestMapping(value = "/api/orders/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<OrderSummary> deleteOrder(@PathVariable long id) {
+	public ResponseEntity<Boolean> deleteOrder(@PathVariable long id) {
 
 		repository.delete(id);
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(true, HttpStatus.OK);
 	}
 	
 	
@@ -166,8 +166,8 @@ public class ShoppingCartRestController {
 	
 	@JsonView(ShoppingCartView.class)
 	@RequestMapping("/api/listcart/")
-	public @ResponseBody List<OrderCart> getMemoryListCart(Pageable page) {	
-		
+	public @ResponseBody List<OrderCart> getMemoryListCart(Pageable page) {
+
 		System.out.println(userComponent.getListProducts());
 		return userComponent.getListProducts();
 	}
@@ -204,13 +204,13 @@ public class ShoppingCartRestController {
 		return "Producto añadido";
 	}
 	
-    @RequestMapping (value="/api/cart/remove/{name}",method = RequestMethod.DELETE)
-    public String removeCart (@PathVariable String name, HttpSession session, Model model){
+    @RequestMapping (value="/api/cart/remove/{id}",method = RequestMethod.DELETE)
+    public String removeCart (@PathVariable long id){
 		
     	//List <Cart> lst = (List<Cart>) session.getAttribute("cart");	
     	if (userComponent.getListProducts() != null){
     		for (OrderCart cart: userComponent.getListProducts()){
-    			if (cart.getName().equals(name)){
+    			if (cart.getId() == id){
     				userComponent.getListProducts().remove(cart);
     				break;
     			}

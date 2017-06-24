@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
+import es.urjc.code.practica.product.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -32,7 +33,10 @@ import es.urjc.code.practica.user.UserComponent;
 
 @Controller
 public class OffersController {
-	
+
+	@Autowired
+	private ProductsRepository productRepository;
+
 	@Autowired
 	private OfferRepository repository;
 	
@@ -47,51 +51,76 @@ public class OffersController {
 	
 	@PostConstruct
 	public void init() {
-		
-		Offer offer1 = new Offer("Rayban","offer1", (double) 100);
-		Offer offer2 = new Offer("Prada","offer2", (double) 200);	
-		Offer offer3 = new Offer("Cartier","offer3", (double) 300);	
-		Offer offer4 = new Offer("Ralph Lauren","offer4", (double) 400);	
-		Offer offer5 = new Offer("Dolce&Gabanna","offer5", (double) 500);	
-		Offer offer6 = new Offer("Carolina Herrera","offer6", (double) 600);
-		Offer offer7 = new Offer("D&K","offer7", (double) 700);
-		Offer offer8 = new Offer("Massimo Dutti","offer8", (double) 800);
-		Offer offer9 = new Offer("Arnette","offer9", (double) 900);
-		Offer offer10 = new Offer("Vogue","offer10", (double) 1000);
-		
-		
+
+		productRepository.save(new Product("sunglasses1", "brand1", "model1", "reference1", "gafas de sol","Marca","red", "M", null, null, false, 2.0, 5, "http://placehold.it/350x260", "description1", true));
+		productRepository.save(new Product("sunglasses2", "brand2", "model2", "reference2", "gafas de sol","Marca","black", "S", null, null, false, 1.0, 5, "http://placehold.it/350x260", "description2", false));
+		productRepository.save(new Product("sunglasses3", "brand3", "model3", "reference3", "gafas de sol", "Marca","blue", "XL", null, null, false, 0.50, 5, "http://placehold.it/350x260", "description3", false));
+		productRepository.save(new Product("sunglasses4", "brand4", "model4", "reference4", "gafas de sol", "Marca","red", "M", null, null, false, 4.50, 5, "http://placehold.it/350x260", "description4", true));
+		productRepository.save(new Product("sunglasses5", "brand5", "model5", "reference5", "gafas de sol", "Marca","red", "M", null, null, false, 7.50, 5, "http://placehold.it/350x260", "description5", false));
+		productRepository.save(new Product("lents6", "brand6", "model6", "reference6", "lentillas", "Diarias", null, null, "0.25", "8.50", false, 3.50, 5, "http://placehold.it/350x260", "description6", true));
+
+		productRepository.save(new Product("lents7", "brand7", "model7", "reference7", "lentillas", "Diarias", null, null," 0.25", "8.50", false, 8.0, 5, "http://placehold.it/350x260", "description7", true));
+		productRepository.save(new Product("lents8", "brand8", "model8", "reference8", "lentillas", "Mensuales", null, null, "0.25", "8.50", false, 2.50, 5, "http://placehold.it/350x260", "description8", true));
+		productRepository.save(new Product("lents9", "brand9", "model9", "reference9", "lentillas", "Quincenales", null, null, "0.25", "8.50", false, 1.50, 5, "http://placehold.it/350x260", "description9", true));
+		productRepository.save(new Product("lents10", "brand10", "model10", "reference10", "lentillas", "Quincenales", null, null, "0.25", "8.50", false, 1.50, 5, "http://placehold.it/350x260", "description10", false));
+		productRepository.save(new Product("accesory11", "brand11", "model11", "reference11", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11", true));
+		productRepository.save(new Product("accesory12", "brand12", "model12", "reference12", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", true));
+		productRepository.save(new Product("accesory13", "brand13", "model13", "reference13", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 2.50, 5, "http://placehold.it/350x260", "description13", true));
+		productRepository.save(new Product("accesory14", "brand14", "model14", "reference14", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", false));
+		productRepository.save(new Product("accesory15", "brand15", "model15", "reference15", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 0.70, 5, "http://placehold.it/350x260", "description15", true));
+		//Hasta aquí son 11 productos
+
+		//Metemos los siguientes nuevos para probar la paginación
+
+		productRepository.save(new Product("accesory16", "brand11", "model11", "reference11", "liquidosyaccesorios", "Accesorios", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11", false));
+		productRepository.save(new Product("accesory17", "brand12", "model12", "reference12", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", false));
+		productRepository.save(new Product("accesory18", "brand13", "model13", "reference13", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description13", false));
+		productRepository.save(new Product("accesory19", "brand14", "model14", "reference14", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", false));
+		productRepository.save(new Product("accesory20", "brand15", "model15", "reference15", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description15", false));
+		productRepository.save(new Product("accesory21", "brand11", "model11", "reference11", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11",false));
+		productRepository.save(new Product("accesory22", "brand12", "model12", "reference12", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", false));
+		productRepository.save(new Product("accesory23", "brand13", "model13", "reference13", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description13", false));
+		productRepository.save(new Product("accesory24", "brand14", "model14", "reference14", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", false));
+		productRepository.save(new Product("accesory25", "brand15", "model15", "reference15", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description15", false));
+		productRepository.save(new Product("accesory26", "brand11", "model11", "reference11", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description11", false));
+		productRepository.save(new Product("accesory27", "brand12", "model12", "reference12", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description12", false));
+		productRepository.save(new Product("accesory28", "brand13", "model13", "reference13", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description13", false));
+		productRepository.save(new Product("accesory29", "brand14", "model14", "reference14", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description14", false));
+		productRepository.save(new Product("accesory30", "brand15", "model15", "reference15", "liquidosyaccesorios", "Liquidos", null, null, null, null, false, 1.50, 5, "http://placehold.it/350x260", "description15", false));
+
+		Product productOffer1 = new Product("ONE DAY ACUVUE MOIST 30 UNIDADES",
+				"Acuvue","model1","reference1","lentillas","Quincenales","bluecolor",
+				"noSize","noSpherePredef","noRadioPredef",false,19.34,5,"http://placehold.it/350x260",
+				"Referencia: LA3 " + "\n" + "Lente de contacto de hidrogel. El componente usado en su fabricación es altamente hidratante y aporta gran comodidad a lo largo del día."
+						+ " Contiene filtro UV. Cada caja contiene 30 unidades.", true);
+		Product productOffer2 = new Product("RAY BAN 4165 601/71 55",
+				"rayban","model1","reference1","gafas de sol","Marca","redcolor",
+				"medium","0","0",false,
+				61.60,5,"http://placehold.it/350x260",
+				"Referencia: 21006065 ", true);
+
+		Product productOffer3 = new Product("LIMPIA GAFAS AROMA MANZANA",
+				"visionlynx","model1","reference1","liquidosyaccesorios", "Liquidos","nocolor",
+				"nosize","0","0",false,
+				3.20,5,"http://placehold.it/350x260",
+				"Referencia: 21006067 ", true);
+
+		productRepository.save(productOffer1);
+
+		productRepository.save(productOffer2);
+
+		productRepository.save(productOffer3);
+
+		Offer offer1 = new Offer(productOffer1);
+		Offer offer2 = new Offer(productOffer2);
+		Offer offer3 = new Offer( productOffer3);
+
+
 		repository.save(offer1);
 		repository.save(offer2);
 		repository.save(offer3);
-		repository.save(offer4);
-		repository.save(offer5);
-		repository.save(offer6);
-		repository.save(offer7);
-		repository.save(offer8);
-		repository.save(offer9);
-		repository.save(offer10);
 		
 	}
-	
-	
-	@RequestMapping(value = "/offers", method = RequestMethod.GET)
-	    public String listOffer(Model model,Pageable page,HttpServletRequest request) {
-	       // model.addAttribute("offer", new Offer());
-		
-			model.addAttribute("logueado", userComponent.isLoggedUser());
-			model.addAttribute("admin", request.isUserInRole("ADMIN"));
-			
-	    	Page<Offer> offers = repository.findAll(new PageRequest(page.getPageNumber(), 4));
-	    	model.addAttribute("offers", offers);
-	    	
-	    	//Parte Paginación
-	    	model.addAttribute("showNext",!offers.isLast());
-	    	model.addAttribute("showPrev", !offers.isFirst());
-	    	model.addAttribute("nextPage", offers.getNumber()+1);
-	    	model.addAttribute("prevPage",offers.getNumber()-1);
-	        
-	        return "user_offers";
-	 }
    
 
 	

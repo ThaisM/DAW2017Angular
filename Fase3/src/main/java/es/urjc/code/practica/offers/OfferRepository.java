@@ -10,9 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface OfferRepository extends JpaRepository<Offer, Long> {
  
-    Offer findById(Long id);  
-    
-    Offer findByName(String name);
+    Offer findById(Long id);
 
 	//Page<Offer> findAll(Pageable page);
 
