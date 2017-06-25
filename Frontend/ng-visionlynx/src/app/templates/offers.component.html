@@ -1,0 +1,153 @@
+<div id="offers">
+
+    <!--  <div class="container">
+         <div class="row">
+             <div class="row">
+                 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+                 </div>
+                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                     Controls
+                     <div class="controls pull-right hidden-xs">
+                         <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example" data-slide="prev"></a>
+                         <a class="right fa fa-chevron-right btn btn-success" href="#carousel-example" data-slide="next"></a>
+                         <p></p>
+                     </div>
+                 </div>
+             </div>
+             <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+                 Wrapper for slides
+                 <div class="carousel-inner">
+                     <div class="item active">
+                         <div class="row">
+
+                        {{#offers}}
+                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                 <article class="col-item">
+                                     <div class="photo">
+                                         <div class="options">
+                                             <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Favoritos">
+                                                 <i class="fa fa-heart-o"></i>
+                                             </button>
+                                             <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Carro">
+                                                 <i class="fa fa-cart-arrow-down"></i>
+                                             </button>
+                                         </div>
+                                         <a href="#"> <img src="img/gafas1.jpg" class="img-responsive " alt="Product Image" /> </a>
+                                     </div>
+                                     <div class="info">
+                                         <div class="row">
+                                             <div class="price-details col-md-6">
+                                                 <p class="details">{{category}}</p>
+                                                 <h1>OFF</h1>
+                                                 <span class="price-new">{{price}}</span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </article>
+                             </div>
+                            {{/offers}}
+
+
+                             <div class="clearfix">
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div> -->
+
+    <!-- ----------------------------------- -->
+
+    <section id="carousel-section-products">
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <h4>DESCUENTOS ESPECIALES SOLO EN NUESTRA WEB</h4>
+                        <hr>
+                    </div>
+                </div>
+
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+
+
+                        <div class="item active">
+                            <div class="row">
+                                <div *ngIf="cribbedOffer.length > 0" [routerLink]="['/product/', cribbedOffer[0].id]" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <article class="col-item">
+                                        <div class="photo">
+                                            <div class="options">
+                                                <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Carro">
+                                                    <i class="fa fa-cart-arrow-down"></i>
+                                                </button>
+                                            </div>
+                                            <a href="#"> <img [src]="cribbedOffer[0].image" class="img-responsive " alt="Product Image" /> </a>
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price-details col-md-6">
+                                                    <p class="details">{{cribbedOffer[0].name}}</p>
+                                                    <span class="price-new">${{cribbedOffer[0].price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+
+                                <div *ngIf="cribbedOffer.length > 1" [routerLink]="['/product/', cribbedOffer[1].id]" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <article class="col-item">
+                                        <div class="photo">
+                                            <div class="options">
+                                                <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Carro">
+                                                    <i class="fa fa-cart-arrow-down"></i>
+                                                </button>
+                                            </div>
+                                            <a href="#"> <img [src]="cribbedOffer[1].image" class="img-responsive " alt="Product Image" /> </a>
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price-details col-md-6">
+                                                    <p class="details">{{cribbedOffer[1].name}}</p>
+                                                    <span class="price-new">${{cribbedOffer[1].price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+
+                                <div *ngIf="cribbedOffer.length > 2" [routerLink]="['/product/', cribbedOffer[2].id]" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <article class="col-item">
+                                        <div class="photo">
+                                            <div class="options">
+                                                <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Carro">
+                                                    <i class="fa fa-cart-arrow-down"></i>
+                                                </button>
+                                            </div>
+                                            <a href="#"> <img [src]="cribbedOffer[2].image" class="img-responsive " alt="Product Image" /> </a>
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price-details col-md-6">
+                                                    <p class="details">{{cribbedOffer[2].name}}</p>
+                                                    <span class="price-new">${{cribbedOffer[2].price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div> <!-- Fin div id="offers" -->

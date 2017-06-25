@@ -1,0 +1,112 @@
+
+<div class="container">
+    <h1 class="page-header"></h1>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="text-center">
+                <img src="assets/images/profile_image.png" class="avatar img-circle img-thumbnail" alt="avatar">
+            </div>
+            <div class="text-center">
+                <br>
+                <!--<button type="submit" class="btn btn-success" id="changePass">Cambiar Contraseña</button>-->
+            </div>
+            <br>
+            <!--   <div class="text-center">
+                 <a href="/user_orders" type="button" class="btn btn-success">Mis Pedidos</a>
+             </div> -->
+
+
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 personal-info test">
+            <!-- Columna de datos personales -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Datos personales</h3></div>
+                    <div class="panel-body">
+                        <div *ngIf="modifiedUser" class="alert alert-success">
+                            <strong>Perfecto!</strong> Tus datos se han cambiado correctamente.
+                        </div>
+
+                        <form *ngIf="user != null" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputName" class="col-lg-2 control-label">Nombre</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="user.name" type="text" class="form-control" name="name" id="inputName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSurname" class="col-lg-2 control-label">Apellidos</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="user.surnames" type="text" class="form-control" name="surnames" id="inputSurname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="user.email" type="text" class="form-control" name="email" id="inputEmail">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress" class="col-lg-2 control-label">Dirección</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="user.address" type="text" class="form-control" name= "address" id="inputAddess">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCP" class="col-lg-2 control-label">Código Postal</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="user.zipcode" type="text" class="form-control" name="zipcode" id="inputCP">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-6">
+                                    <button style="visibility: hidden" type="reset" class="btn btn-default">Cancelar</button>
+                                    <input type='submit' value='Cambiar' class="btn btn-primary" (click)="modifyUser()">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna de datos personales -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Cambiar contraseña</h3></div>
+                    <div class="panel-body">
+                        <div *ngIf="passwordDontMatch" class="alert alert-danger">
+                            <strong>Error!</strong> Las contraseñas no coinciden.
+                        </div>
+                        <div *ngIf="modifiedPassword" class="alert alert-success">
+                            <strong>Exito!</strong> La contraseña se ha cambiado satisfactoriamente.
+                        </div>
+                        <form class="form-horizontal" action = "/user/editPassword/" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="inputPass" class="col-lg-2 control-label">Nueva contraseña</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="password1" type="password" class="form-control" name="password" id="inputPass" placeholder="New Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputConfirm" class="col-lg-2 control-label">Confirmar contraseña</label>
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <input [(ngModel)]="password2" type="password" class="form-control" name="confirmPassword" id="inputConfirm" placeholder="Confirm Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-6">
+                                    <button style="visibility: hidden" type="reset" class="btn btn-default">Cancelar</button>
+                                    <input type='submit' value='Cambiar' class="btn btn-primary" (click)="changePassword()"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

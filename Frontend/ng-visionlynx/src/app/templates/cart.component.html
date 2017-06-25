@@ -1,0 +1,162 @@
+
+<div id="user_cart">
+    <div class="container">
+        <div class="bs-docs-section clearfix">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bs-component">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="active">Su Carrito</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="bs-docs-section clearfix">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bs-component">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#carrito" data-toggle="tab" aria-expanded="false"><i class="glyphicon glyphicon-shopping-cart"></i>Carrito</a>
+                            </li>
+                            <li class="disabled">
+                                <a href="#direccion" data-toggle="tab" aria-expanded="true">Finalizar pedido</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Inicio Carrito -->
+
+            <div *ngIf="listProducts.length == 0" class="row">
+                <div class="col-xs-12">
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in " id="carrito">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                Su carrito está vacío
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in " id="carrito">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5>RESUMEN</h5>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <!-- <button type="button" class="btn btn-primary btn-sm btn-block">
+                                                <span class="glyphicon glyphicon-share-alt"></span> Seguir comprando
+                                            </button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="listProducts != null && productsObjects.length == listProducts.length" class="panel-body">
+
+                                    <hr>
+                                    <div *ngFor="let orderCart of listProducts; let i = index" class="row">
+                                        <div class="col-xs-2"><img class="img-responsive" [src]="productsObjects[i].image">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <h4 class="product-name"><strong>{{orderCart.name}} </strong></h4>
+                                            <h4><small>{{productsObjects[i].description}}</small></h4>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="col-xs-6 text-right">
+                                                <h6><strong>{{orderCart.price}} <span class="text-muted">x</span></strong></h6>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <input type="text" class="form-control input-sm" value="{{orderCart.quantity}}">
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <a type="button" class="btn btn-link btn-xs" (click)="deleteOrder(orderCart.name)"> <span class="glyphicon glyphicon-trash"> </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row text-right">
+                                        <div class="col-md-8 col-xs-4"> </div>
+                                        <div class="col-md-2 col-xs-4">
+                                            <h5>Subtotal</h5>
+                                        </div>
+                                        <div *ngIf="globalInfo != null" class="col-md-2 col-xs-4">
+                                            <h5>{{globalInfo.actualPrice - globalInfo.comission}}  €</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row text-right">
+                                        <div class="col-md-8 col-xs-4"> </div>
+                                        <div class="col-md-2 col-xs-4">
+                                            <h5>+ Gastos Envío</h5>
+                                        </div>
+                                        <div class="col-md-2 col-xs-4">
+                                            <h5> {{globalInfo.actualPrice}}€</h5>
+                                        </div>
+                                    </div>
+                                    <p></p>
+
+
+                                    <div class="row text-center">
+                                        <div class="col-md-6 col-xs-2">
+                                            <!--<h4 class="text-right">Total <strong>$50.00</strong></h4> -->
+                                        </div>
+
+                                        <div class="col-md-4 col-xs-6">
+                                            <a routerLink="/" type="button" class="btn btn-primary btn-sm btn-block">
+                                                <span class="glyphicon glyphicon-share-alt"></span> Seguir comprando
+                                            </a>
+
+                                        </div>
+                                        <div class="col-md-2 col-xs-4">
+                                            <a routerLink="/paymentgate" type="button" class="btn btn-success btn-sm btn-block">
+                                                <span></span>Confirmar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- fin div panel entero -->
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Fin Carrito -->
+
+            </div>
+            <!-- div class section clearfix -->
+
+        </div>
+    </div>
+</div>

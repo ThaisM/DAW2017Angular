@@ -191,7 +191,7 @@ a:hover{color: #777; text-decoration: none;}
 }
 
 .form-control {
-    border: 1px solid #fff !important;
+    border: 1px solid #999999 !important;
     box-shadow: none;
     border-radius: 0px;
     color: #555;
@@ -203,7 +203,8 @@ a:hover{color: #777; text-decoration: none;}
 }
 
 .btn-default {
-    border-color: #fff;
+    border-color: #999999;
+
 }
 
 .btn-default:hover {

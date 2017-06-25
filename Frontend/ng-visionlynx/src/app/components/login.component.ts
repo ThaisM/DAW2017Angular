@@ -14,16 +14,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  public logIn(event: any, user: string, pass: string):any{
+  public logIn(event: any, user: string, pass: string):void{
 
       event.preventDefault();
-
 
       this._loginService.logIn(user, pass).subscribe(
           user => {
               console.log(Info.userInfo);
               console.log(Info.isAdminLogged);
-              this._router.navigate(['/index']);
+              this._router.navigate(['/'])
           },
           error => alert("Invalid user or password")
       );
