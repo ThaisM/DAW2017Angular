@@ -189,7 +189,7 @@ public class ShoppingCartRestController {
 			boolean flag = false;
 			for (OrderCart ocart : userComponent.getListProducts()) {
 
-				if (ocart.getName() == cart.getName()) {
+				if (ocart.getName().equals(cart.getName())) {
 					ocart.setQuantity(ocart.getQuantity() + cart.getQuantity());
 					flag = true;
 					break;
@@ -204,13 +204,13 @@ public class ShoppingCartRestController {
 		return "Producto añadido";
 	}
 	
-    @RequestMapping (value="/api/cart/remove/{id}",method = RequestMethod.DELETE)
-    public String removeCart (@PathVariable long id){
+    @RequestMapping (value="/api/cart/remove/{name}",method = RequestMethod.DELETE)
+    public String removeCart (@PathVariable String name){
 		
     	//List <Cart> lst = (List<Cart>) session.getAttribute("cart");	
     	if (userComponent.getListProducts() != null){
     		for (OrderCart cart: userComponent.getListProducts()){
-    			if (cart.getId() == id){
+    			if (cart.getName().equals(name)){
     				userComponent.getListProducts().remove(cart);
     				break;
     			}

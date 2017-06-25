@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,11 +28,20 @@ public class UserRestController {
 	
 	@Autowired
 	private UserRepository repository;
+
+	@Autowired
+	private UserComponent userComponent;
 	
 	
 	private static final String FILES_FOLDER = "files";
 	
-	
+
+	@JsonView(UserView.class)
+	@RequestMapping(value = "/api/loggedUser/", method=RequestMethod.GET)
+	public User getUsers(){
+		return userComponent.getLoggedUser();
+	}
+
 	@JsonView(UserView.class)
 	@RequestMapping(value = "/api/users/", method= RequestMethod.GET)
 	public List<User> getUsers(Pageable page){
@@ -68,8 +78,12 @@ public class UserRestController {
 		User user = repository.findOne(id);
 		if (user != null) {
 
-			updateUser.setId(id);
-			repository.save(updateUser);
+			user.setName(updateUser.getName());
+			user.setSurnames(updateUser.getSurnames());
+			user.setEmail(updateUser.getEmail());
+			user.setAddress(updateUser.getAddress());
+			user.setZipcode(updateUser.getZipcode());
+			repository.save(user);
 
 			return new ResponseEntity<>(updateUser, HttpStatus.OK);
 		} else {
@@ -84,6 +98,20 @@ public class UserRestController {
 
 		repository.delete(id);
 		return new ResponseEntity<>(true, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/api/users/changePassword/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Boolean> deleteUser(@RequestBody String password, @PathVariable long id) {
+
+		User user = repository.findOne(id);
+
+		if(user.getId() == userComponent.getLoggedUser().getId()){
+			user.setPasswordHash(new BCryptPasswordEncoder().encode(password));
+			repository.save(user);
+
+			return new ResponseEntity<>(true, HttpStatus.OK);
+		}
+		return new ResponseEntity<Boolean>(HttpStatus.UNAUTHORIZED);
 	}
 
 }

@@ -148,7 +148,7 @@ public class User {
 	}
 
 	public void setPasswordHash(String password){
-		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.passwordHash = password;
 	}
 
 	
