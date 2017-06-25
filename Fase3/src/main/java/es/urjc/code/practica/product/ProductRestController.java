@@ -146,7 +146,10 @@ public class ProductRestController {
 	@RequestMapping(value = "/api/products/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Boolean> deleteProduct(@PathVariable long id) {
 
-		repository.delete(id);
+		Product product = repository.findOne(id);
+
+		repository.delete(product);
+
 		return new ResponseEntity<>(true, HttpStatus.OK);
 	}
 

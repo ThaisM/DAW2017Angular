@@ -55,7 +55,10 @@ public class UserRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public User createUser(@RequestBody User user) {
 
-		repository.save(user);
+		User newUser = new User(user.getName(), user.getSurnames(), user.getEmail(), user.getPasswordHash(),"01/01/2000",
+				user.getAddress(), user.getZipcode(), user.getLocality(), user.getProvince(), user.getCountry(),user.getPhone(), user.getNid(), "ROLE_USER");
+
+		repository.save(newUser);
 
 		return user;
 	}

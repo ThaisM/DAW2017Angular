@@ -86,7 +86,7 @@ public class ShoppingCartRestController {
 		//List<OrderSummary> listOrders = repository.findAll(page).getContent();
 		List<OrderSummary> listOrders2 = new ArrayList<OrderSummary>();
 		
-		listOrders2= repository.findAll();
+		listOrders2= repository.findAll(page).getContent();
 		return listOrders2;
 		
 		//List<OrderSummary> listOrders = repository.findAll();
