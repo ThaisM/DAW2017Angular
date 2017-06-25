@@ -19,6 +19,13 @@ import {PaymentGateComponent} from "./components/paymentgate.component";
 import {CreditCardComponent} from "./components/creditcard.component";
 import {ProfileComponent} from "./components/profile.component";
 import {OffersComponent} from "./components/offers.component";
+import {AdminMenuComponent} from "./components/adminmenu.component";
+import {AdminOrdersComponent} from "./components/adminorders.component";
+import {AdminProductsComponent} from "app/components/adminproducts.component";
+import {AdminAddProduct} from "app/components/adminaddproduct.component";
+import {AdminImageProductComponent} from "./components/adminimageproduct.component";
+import {NgUploaderModule} from "ngx-uploader/src/module/ngx-uploader.module";
+import {RegisterComponent} from "./components/register.component";
 
 @NgModule({
     declarations: [
@@ -30,13 +37,20 @@ import {OffersComponent} from "./components/offers.component";
         PaymentGateComponent,
         CreditCardComponent,
         ProfileComponent,
-        OffersComponent
+        OffersComponent,
+        AdminMenuComponent,
+        AdminOrdersComponent,
+        AdminProductsComponent,
+        AdminAddProduct,
+        AdminImageProductComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        NgUploaderModule
 
     ],
     providers: [

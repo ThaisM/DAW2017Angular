@@ -1,0 +1,87 @@
+<br>
+<br>
+<div id="admin">
+
+    <div id="admin-products">
+        <div class="container">
+            <a routerLink="/adminadd/add" type="button" class="btn btn-primary add-product" > <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</a>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Products</h3>
+                            <div class="pull-right">
+                                    <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+                        </div>
+                        <table class="table table-hover" id="dev-table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Product ID</th>
+                                <th>Product name</th>
+                                <th>Product brand</th>
+                                <th>Product type</th>
+                                <th>Published</th>
+                                <th>Is offer</th>
+                            </tr>
+                            </thead>
+                            <tbody *ngIf="products.length > 0" >
+                            <tr *ngFor="let product of products">
+                                <td>
+                                    <input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
+                                <td>
+                                    <img style="width: 100px"[src]="product.image">
+                                </td>
+                                <td>
+                                    <p>{{product.id}}</p>
+                                </td>
+                                <td>
+                                    <p>{{product.name}}</p>
+                                </td>
+                                <td>
+                                    <p>{{product.brand}}</p>
+                                </td>
+                                <td>
+                                    <p>{{product.type}}</p>
+                                </td>
+                                <td>
+                                    <p>{{product.published}}</p>
+                                </td>
+                                <td>
+                                    <p>{{product.offer}}</p>
+                                </td>
+                                <td>
+                                   <a [routerLink]="['/adminadd/', product.id]"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </td>
+                                <td>
+                                    <a><span (click)="deleteProduct(product.id)" class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/adminproductimage/', product.id]"><span class="glyphicon glyphicon-picture"></span></a>
+                                </td>
+                                <!--   <td>
+                                    <!--   <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-pencil"></span></button>
+                                      <a href="#" type="button" class="btn btn-primary" > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                 </td> -->
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div align="right">
+                        <button *ngIf="!hideMoreButton" id="cargarmas" (click)="loadMore()" class="btn btn-primary" >Cargar más</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- fin div class container -->
+    </div>
+</div>

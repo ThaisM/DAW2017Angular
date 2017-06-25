@@ -1,0 +1,74 @@
+<br>
+<br>
+<div id="admin">
+
+    <div id="admin-products">
+        <div class="container">
+
+            <!--  <button type="button" class="btn btn-primary add-product"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+           -->
+            <a routerLink="/adminmenu" type="button" class="btn btn-primary add-product" > <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Volver</a>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Pedidos</h3>
+                            <div class="pull-right">
+                                    <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+                        </div>
+                        <table class="table table-hover" id="dev-table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Order ID</th>
+                                <th>Order name</th>
+                                <th>User order</th>
+                                <th>Payment method</th>
+                                <!--  <th>Productos</th> -->
+                                <!--  <th>Actions</th> -->
+                            </tr>
+                            </thead>
+
+                            <tbody *ngIf="orders.length > 0" >
+                            <tr *ngFor="let order of orders">
+                                <td>
+                                    <input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
+                                <td>
+                                    <p>{{order.id}}</p>
+                                </td>
+                                <td>
+                                    <p>{{order.ordername}}</p>
+                                </td>
+                                <td>
+                                    <p>{{order.user}}</p>
+                                </td>
+                                <td>
+                                    <p>{{order.paymentmethod}}</p>
+                                </td>
+
+                                <!--   <td>
+                                    <!--   <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-pencil"></span></button>
+                                      <a href="#" type="button" class="btn btn-primary" > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                 </td> -->
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div align="right">
+                        <button *ngIf="!hideMoreButton" id="cargarmas" (click)="loadMore()" class="btn btn-primary" >Cargar más</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div><!-- fin div class container -->
+    </div>
+</div>

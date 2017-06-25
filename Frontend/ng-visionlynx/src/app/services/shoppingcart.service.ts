@@ -28,6 +28,12 @@ export class ShoppingCartService{
         return this._http.get(url).map(res => res.json());
     }
 
+    getOrdersByPage(page:number, size:number):Observable<OrderSummary[]>{
+        let url:string = "/api/orders/?page=" + page + "&size=" + size;
+
+        return this._http.get(url).map(res => res.json());
+    }
+
     /**POST**/
 
     postInProductList(data):Observable<String>{

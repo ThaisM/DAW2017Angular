@@ -1,0 +1,28 @@
+<div id="Product_Images" class="tab-pane">
+
+
+    <div *ngIf="product != null"class="col-lg-12 form-group margin50">
+        <label class="col-sm-2"> {{product.name}} </label>
+        <div class="col-sm-4">
+            <input type="text" id="small" name="imageTitle">
+        </div>
+    </div>
+
+
+    <div class="col-lg-12 form-group margin50">
+        <label class="col-sm-2">Image</label>
+        <div class="col-sm-4">
+            <input type="file"
+                   ngFileSelect
+                   [options]="options"
+                   [events]="inputUploadEvents"
+                   (onUpload)="handleUpload($event)"
+                   (onPreviewData)="handlePreviewData($event)">
+        </div>
+    </div>
+
+    <div class="Product_Button col-lg-offset-6">
+        <a (click)="startUpload()" class="btn btn-primary"><i class=""></i><strong>Subir</strong></a>
+    </div>
+
+</div>

@@ -63,8 +63,8 @@ export class ProductService{
     }
 
     /** DELETE **/
-    deleteProduct(name: string){
-        let url:string = '/api/products/' + name;
+    deleteProduct(id: number){
+        let url:string = '/api/products/' + id;
 
         let headers = new Headers({
             'Content-Type': 'application/json;charset=UTF-8'

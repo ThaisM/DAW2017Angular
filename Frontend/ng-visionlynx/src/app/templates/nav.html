@@ -19,7 +19,7 @@
           </li>
           <li *ngIf="globalInfo.userInfo == null" ><a routerLink="/login" >Iniciar sesión  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
           <li *ngIf="globalInfo.userInfo != null && !globalInfo.isAdminLogged" ><a routerLink="/profile" >Mi perfil <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li *ngIf="globalInfo.userInfo != null && globalInfo.isAdminLogged" ><a routerLink="/login" >Panel Admin <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            <li *ngIf="globalInfo.userInfo != null && globalInfo.isAdminLogged" ><a routerLink="/adminmenu" >Panel Admin <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
           <li><a href="#">Ayuda <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
         </ul>
       </div>

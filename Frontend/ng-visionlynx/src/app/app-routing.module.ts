@@ -8,6 +8,12 @@ import {PaymentGateComponent} from "./components/paymentgate.component";
 import {CreditCardComponent} from "./components/creditcard.component";
 import {ProfileComponent} from "./components/profile.component";
 import {OffersComponent} from "./components/offers.component";
+import {AdminMenuComponent} from "./components/adminmenu.component";
+import {AdminOrdersComponent} from "./components/adminorders.component";
+import {AdminProductsComponent} from "./components/adminproducts.component";
+import {AdminAddProduct} from "./components/adminaddproduct.component";
+import {AdminImageProductComponent} from "./components/adminimageproduct.component";
+import {RegisterComponent} from "./components/register.component";
 
 
 const routes: Routes = [
@@ -19,7 +25,13 @@ const routes: Routes = [
     { path: 'paymentgate', component: PaymentGateComponent},
     { path: 'creditcardpayment', component: CreditCardComponent},
     { path: 'profile', component: ProfileComponent},
-    { path: 'offers', component: OffersComponent}
+    { path: 'offers', component: OffersComponent},
+    { path: 'adminmenu', component: AdminMenuComponent},
+    { path: 'adminorders', component: AdminOrdersComponent},
+    { path: 'adminproducts', component: AdminProductsComponent},
+    { path: 'adminadd/:id', component: AdminAddProduct},
+    { path: 'adminproductimage/:id', component: AdminImageProductComponent},
+    { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({

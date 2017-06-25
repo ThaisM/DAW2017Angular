@@ -11,4 +11,10 @@ export class OfferService{
 
         return this._http.get(url).map(res => res.json());
     }
+
+    getOffersByPage(page:number, size:number){
+        let url: string = "/api/offersPage/?page=" +page + "&size=" + size;
+
+        return this._http.get(url).map(res => res.json());
+    }
 }

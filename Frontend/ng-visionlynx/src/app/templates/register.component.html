@@ -1,0 +1,386 @@
+
+<!-- rejilla con diferentes secciones> -->
+<div id="form_create_account">
+    <div class="container">
+        <br>
+        <br>
+        <div class="page" id="banner">
+            <div class="row">
+                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+                    <!-- Título -->
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="page-header">
+                                <h1 id="forms">Crear una cuenta</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna Izquierda -->
+                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+                    <!-- Formulario -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="well bs-component">
+                                <form class="form">
+                                        <legend>
+                                            <h3>Datos personales</h3>
+                                        </legend>
+                                        <div class="form-group">
+                                            <label class="col-lg-12">Tratamiento</label>
+                                            <div class="col-lg-12">
+                                                <label class="radio-inline">
+                                                    <input type="radio" id="gender" name="gender" value="Hombre" class="form-control gender"> Hombre
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" id="gender" name="gender" value="Mujer" class="form-control gender"> Mujer
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <br>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-12" for="name">Nombre*</label>
+                                                <input [(ngModel)]="user.name" type="text" class="form-control" id="name" name="name" placeholder="Nombre de usuario">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-12" for="surname">Apellidos*</label>
+                                                <input [(ngModel)]="user.surnames" type="text" class="form-control" id="surname" name="surname" placeholder="Apellidos">
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-12">Correo Electrónico*</label>
+                                                <input [(ngModel)]="user.email" type="text" class="form-control" id="email" name="email" placeholder="Email">                                            </div>
+
+
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-12">Contraseña* <small>(Mínimo 5 carácteres)</small></label>
+                                                <input [(ngModel)]="user.passwordHash" type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                                            </div>
+
+                                            <label class="col-lg-12">Fecha de nacimiento</label>
+                                            <div class="col-lg-4">
+                                                <select  class="form-control" id="birth" name="birtg">
+                                                    <option value="">-</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <select id="month" name="birthdate" class="form-control month">
+                                                    <option value="">-</option>
+                                                    <option value="1">Enero</option>
+                                                    <option value="2">Febreo</option>
+                                                    <option value="3">Marzo</option>
+                                                    <option value="4">Abril</option>
+                                                    <option value="5">Mayo</option>
+                                                    <option value="6">Junio</option>
+                                                    <option value="7">Julio</option>
+                                                    <option value="8">Agosto</option>
+                                                    <option value="9">Septiembre</option>
+                                                    <option value="10">Octubre</option>
+                                                    <option value="11">Noviembre</option>
+                                                    <option value="12">Diciembre</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <select id="year" name="birthdate" class="form-control year">
+                                                    <option value="">-</option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2016">2016</option>
+                                                    <option value="2015">2015</option>
+                                                    <option value="2014">2014</option>
+                                                    <option value="2013">2013</option>
+                                                    <option value="2012">2012</option>
+                                                    <option value="2011">2011</option>
+                                                    <option value="2010">2010</option>
+                                                    <option value="2009">2009</option>
+                                                    <option value="2008">2008</option>
+                                                    <option value="2007">2007</option>
+                                                    <option value="2006">2006</option>
+                                                    <option value="2005">2005</option>
+                                                    <option value="2004">2004</option>
+                                                    <option value="2003">2003</option>
+                                                    <option value="2002">2002</option>
+                                                    <option value="2001">2001</option>
+                                                    <option value="2000">2000</option>
+                                                    <option value="1999">1999</option>
+                                                    <option value="1998">1998</option>
+                                                    <option value="1997">1997</option>
+                                                    <option value="1996">1996</option>
+                                                    <option value="1995">1995</option>
+                                                    <option value="1994">1994</option>
+                                                    <option value="1993">1993</option>
+                                                    <option value="1992">1992</option>
+                                                    <option value="1991">1991</option>
+                                                    <option value="1990">1990</option>
+                                                    <option value="1989">1989</option>
+                                                    <option value="1988">1988</option>
+                                                    <option value="1987">1987</option>
+                                                    <option value="1986">1986</option>
+                                                    <option value="1985">1985</option>
+                                                    <option value="1984">1984</option>
+                                                    <option value="1983">1983</option>
+                                                    <option value="1982">1982</option>
+                                                    <option value="1981">1981</option>
+                                                    <option value="1980">1980</option>
+                                                    <option value="1979">1979</option>
+                                                    <option value="1978">1978</option>
+                                                    <option value="1977">1977</option>
+                                                    <option value="1976">1976</option>
+                                                    <option value="1975">1975</option>
+                                                    <option value="1974">1974</option>
+                                                    <option value="1973">1973</option>
+                                                    <option value="1972">1972</option>
+                                                    <option value="1971">1971</option>
+                                                    <option value="1970">1970</option>
+                                                    <option value="1969">1969</option>
+                                                    <option value="1968">1968</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                            <br>
+                                        </div>
+
+
+                                        <div class="account-creation col-lg-12">
+                                            <legend>
+                                                <h3>Dirección de facturación</h3>
+                                            </legend>
+                                        </div>
+
+
+                                        <!--
+                                        <div class="required form-group">
+                                            <div class="col-lg-6">
+                                                <label for="firstname" class="col-lg-12">Nombre*</label>
+                                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nombre">
+                                            </div>
+                                        </div>
+                                         -->
+
+                                        <!--
+                                        <div class="form-group">
+
+                                        <div class="required form-group">
+
+
+                                            <div class="col-lg-6">
+                                                <label for="lastname" class="col-lg-12">Apellido*</label>
+                                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-lg-6">
+                                                <label for="company" class="col-lg-12">Empresa</label>
+                                                <input type="text" class="form-control" id="company" name="company" value="" placeholder="Empresa y CIF">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-lg-6">
+                                                <label for="company" class="col-lg-12">CIF</label>
+                                                <input type="text" class="form-control" id="company" name="company" value="" placeholder="CIF de la empresa">
+                                            </div>
+                                        </div>
+
+                                        -->
+
+                                        <div class="required form-group">
+                                            <div class="col-lg-6">
+                                                <label for="address" class="col-lg-12">Dirección*</label>
+                                                <input [(ngModel)]="user.adress" type="text" class="form-control" id="address" name="address" placeholder="Dirección">
+                                                <!--<span class="inline-infos">Calle, Oficina postal, nombre de la empresa</span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!--
+                                            <div class="required form-group">
+                                            -->
+                                            <div class="col-lg-6">
+                                                <label for="address2" class="col-lg-12">Dirección(2)</label>
+                                                <input [(ngModel)]="user.address2" type="text" class="form-control" id="address2" name="address2" placeholder="Dirección 2">                                                  <!--<span class="inline-infos">Apartamento, habitación, unidad, edificio, piso, etc</span>-->
+                                            </div>
+                                        </div>
+                                        <div class="postcode form-group">
+                                            <!--
+                                            <div class="required postcode form-group">
+                                            -->
+
+                                            <div class="col-lg-6">
+                                                <label for="postcode" class="col-lg-12">Código postal*</label>
+                                                <input [(ngModel)]="user.zipcode" type="text" class="form-control" id="postcode" name="postcode" placeholder="Código postal">                                                  <!--<span class="inline-infos">Apartamento, habitación, unidad, edificio, piso, etc</span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!--
+                                            <div class="required form-group">
+                                            -->
+                                            <div class="col-lg-6">
+                                                <label for="city" class="col-lg-12">Localidad*</label>
+                                                <input [(ngModel)]="user.locality" type="text" class="form-control" id="city" name="city" placeholder="Localidad">                                                  <!--<span class="inline-infos">Apartamento, habitación, unidad, edificio, piso, etc</span>-->
+                                            </div>
+                                        </div>
+                                        <div class="select form-group">
+                                            <!--
+                                            <div class="required select form-group">
+                                            -->
+                                            <div class="col-lg-6">
+                                                <label for="id_country" class="col-lg-12">País<sup>*</sup></label>
+                                                <select [(ngModel)]="user.country" type="text" class="form-control" id="id_country" name="id_country" placeholder="Localidad">                                                  <!--<span class="inline-infos">Apartamento, habitación, unidad, edificio, piso, etc</span>-->
+                                                    <option value="">-</option>
+                                                    <option value="Alemania">Alemania</option>
+                                                    <option value="Austria">Austria</option>
+                                                    <option value="Bélgica">Bélgica</option>
+                                                    <option value="Canadá">Canadá</option>
+                                                    <option value="Dinamarca">Dinamarca</option>
+                                                    <option value="España" selected="selected">España</option>
+                                                    <option value="Finlandia">Finlandia</option>
+                                                    <option value="Francia">Francia</option>
+                                                    <option value="Grecia">Grecia</option>
+                                                    <option value="Italia">Italia</option>
+                                                    <option value="Portugal">Portugal</option>
+                                                    <option value="Reino Unido">Reino Unido</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="id_state select unvisible form-group">
+                                            <!--
+                                            <div class="required id_state select unvisible form-group" style="display: block;">
+                                            -->
+
+
+                                            <div class="col-lg-6">
+                                                <label for="id_state" class="col-lg-12">Provincia <sup>*</sup></label>
+                                                <select [(ngModel)]="user.province" type="text" class="form-control" id="id_state" name="id_state" placeholder="Localidad">                                                  <!--<span class="inline-infos">Apartamento, habitación, unidad, edificio, piso, etc</span>-->
+                                                    <option value="">-</option>
+                                                    <option value="A Coruña">A Coruña</option>
+                                                    <option value="Alacant">Alacant</option>
+                                                    <option value="Álava">Álava</option>
+                                                    <option value="Albacete">Albacete</option>
+                                                    <option value="Almería">Almería</option>
+                                                    <option value="Asturias">Asturias</option>
+                                                    <option value="Ávila">Ávila</option>
+                                                    <option value="Badajoz">Badajoz</option>
+                                                    <option value="Balears">Balears</option>
+                                                    <option value="Barcelona">Barcelona</option>
+                                                    <option value="Bizkaia">Bizkaia</option>
+                                                    <option value="Burgos">Burgos</option>
+                                                    <option value="Cáceres">Cáceres</option>
+                                                    <option value="Cádiz">Cádiz</option>
+                                                    <option value="Cantabria">Cantabria</option>
+                                                    <option value="Castelló">Castelló</option>
+                                                    <option value="Ciudad Real">Ciudad Real</option>
+                                                    <option value="Córdoba">Córdoba</option>
+                                                    <option value="Cuenca">Cuenca</option>
+                                                    <option value="Gipuzkoa">Gipuzkoa</option>
+                                                    <option value="Girona">Girona</option>
+                                                    <option value="Granada">Granada</option>
+                                                    <option value="Guadalajara">Guadalajara</option>
+                                                    <option value="Huelva">Huelva</option>
+                                                    <option value="Huesca">Huesca</option>
+                                                    <option value="Jaén">Jaén</option>
+                                                    <option value="Las Palmas">Las Palmas</option>
+                                                    <option value="León">León</option>
+                                                    <option value="Lleida">Lleida</option>
+                                                    <option value="Lugo">Lugo</option>
+                                                    <option value="Madrid">Madrid</option>
+                                                    <option value="Málaga">Málaga</option>
+                                                    <option value="Murcia">Murcia</option>
+                                                    <option value="Nafarroa">Nafarroa</option>
+                                                    <option value="Ourense">Ourense</option>
+                                                    <option value="Palencia">Palencia</option>
+                                                    <option value="Pontevedra">Pontevedra</option>
+                                                    <option value="La Rioja">La Rioja</option>
+                                                    <option value="Salamanca">Salamanca</option>
+                                                    <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                                                    <option value="Segovia">Segovia</option>
+                                                    <option value="Sevilla">Sevilla</option>
+                                                    <option value="Soria">Soria</option>
+                                                    <option value="Tarragona">Tarragona</option>
+                                                    <option value="Teruel">Teruel</option>
+                                                    <option value="Toledo">Toledo</option>
+                                                    <option value="Valencia">Valencia</option>
+                                                    <option value="Valladolid">Valladolid</option>
+                                                    <option value="Zamora">Zamora</option>
+                                                    <option value="Zaragoza">Zaragoza</option>
+                                                    <option value="Ceuta">Ceuta</option>
+                                                    <option value="Melilla">Melilla</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!--
+                                            <div class="required postcode form-group">
+                                            -->
+                                            <div class="col-lg-6">
+                                                <label for="phone_mobile" class="col-lg-12">Teléfono móvil <sup>*</sup></label>
+                                                <input [(ngModel)]="user.phone" type="text" class="form-control" id="phone_mobile" name="phone_mobile" placeholder="Teléfono">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!--
+                                            <div class="required postcode form-group">
+                                            -->
+
+                                            <div class="col-lg-6">
+                                                <label for="dni" class="col-lg-12">Número de indentificación fiscal <sup>*</sup></label>
+                                                <input [(ngModel)]="user.nid" type="text" class="form-control" id="dni" name="dni" placeholder="DNI">
+                                                <!--<span class="form_info">DNI/NIF/NIE</span>-->
+                                            </div>
+                                        </div>
+                                        <div class="textarea form-group">
+                                            <label for="other" class="col-lg-12">Información adicional</label>
+                                            <div class="col-lg-6">
+                                                <textarea [(ngModel)]="user.other" type="text" class="form-control" id="other" name="other" placeholder="Otra Información"></textarea>
+                                            </div>
+                                        </div>
+
+
+                                <input (click)="register()"class="btn btn-primary" type='submit' value="Registrarse">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
