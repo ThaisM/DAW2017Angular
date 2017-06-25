@@ -1,0 +1,239 @@
+
+<div id="products">
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#" class="glyphicon glyphicon-home"></a>
+                <span class="navigation-pipe">&gt;</span>
+            </li>
+            <li><a href="#">Lentillas</a></li>
+            <li class="active"><span>Acuvue</span></li>
+        </ol>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+            <!-- product -->
+            <div class="product-content product-wrap clearfix product-deatil">
+                <div class="row">
+                    <div class="col-md-1 col-sm-12 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3">
+                        <br>
+
+                        <div class="product-image">
+                            <div id="myCarousel-2" class="carousel slide">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
+                                    <li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
+                                    <li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <!-- Slide 1 -->
+                                    <div *ngIf="product != null" class="item active">
+                                        <img [src]="product.image" alt="">
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
+                                <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form *ngIf="product != null" action="/usercart_post" method="post" enctype="multipart/form-data">
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <h2 class="name">{{product.name}}</h2>
+                            <!-- <h2 class="name">ONE DAY ACUVUE MOIST 30 UNIDADES </h2> -->
+                            <hr>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+
+                                <h3 class="price-container">{{product.price}} $<small> IVA incluído</small></h3>
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <label class="attribute_label" for="quantity">Cantidad</label>
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+                                    <div class="attribute_list">
+                                        <select [(ngModel)]="quantity" class="form-control" name="quantity">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div *ngIf="isContactLens" class="col-lg-6 col-sm-6 col-xs-6">
+                                <div id="attributes">
+                                    <div class="clearfix"></div>
+                                        <label class="attribute_label" for="sphere" >Esfera:&nbsp;</label>
+                                        <div class="attribute_list">
+                                            <select [(ngModel)]="sphere" name="sphere" class="form-control">
+                                                <option value="46" title="+00.25">+00.25</option>
+                                                <option value="47" title="+00.50">+00.50</option>
+                                                <option value="48" title="+00.75">+00.75</option>
+                                                <option value="49" title="+01.00">+01.00</option>
+                                                <option value="50" title="+01.25">+01.25</option>
+                                                <option value="51" title="+01.50">+01.50</option>
+                                                <option value="52" title="+01.75">+01.75</option>
+                                                <option value="53" title="+02.00">+02.00</option>
+                                                <option value="54" title="+02.25">+02.25</option>
+                                                <option value="55" title="+02.50">+02.50</option>
+                                                <option value="56" title="+02.75">+02.75</option>
+                                                <option value="57" title="+03.00">+03.00</option>
+                                                <option value="58" title="+03.25">+03.25</option>
+                                                <option value="59" title="+03.50">+03.50</option>
+                                                <option value="60" title="+03.75">+03.75</option>
+                                                <option value="61" title="+04.00">+04.00</option>
+                                                <option value="62" title="+04.25">+04.25</option>
+                                                <option value="63" title="+04.50">+04.50</option>
+                                                <option value="64" title="+04.75">+04.75</option>
+                                                <option value="65" title="+05.00">+05.00</option>
+                                                <option value="66" title="+05.25">+05.25</option>
+                                                <option value="67" title="+05.50">+05.50</option>
+                                                <option value="68" title="+05.75">+05.75</option>
+                                                <option value="69" title="+06.00">+06.00</option>
+                                                <option value="44" title="-00.25">-00.25</option>
+                                                <option value="43" title="-00.50">-00.50</option>
+                                                <option value="41" title="-01.00">-01.00</option>
+                                                <option value="40" title="-01.25">-01.25</option>
+                                                <option value="39" title="-01.50">-01.50</option>
+                                                <option value="38" title="-01.75">-01.75</option>
+                                                <option value="37" title="-02.00">-02.00</option>
+                                                <option value="36" title="-02.25">-02.25</option>
+                                                <option value="35" title="-02.50">-02.50</option>
+                                                <option value="34" title="-02.75">-02.75</option>
+                                                <option value="33" title="-03.00">-03.00</option>
+                                                <option value="32" title="-03.25">-03.25</option>
+                                                <option value="31" title="-03.50">-03.50</option>
+                                                <option value="30" title="-03.75">-03.75</option>
+                                                <option value="29" title="-04.00">-04.00</option>
+                                                <option value="28" title="-04.25">-04.25</option>
+                                                <option value="27" title="-04.50">-04.50</option>
+                                                <option value="26" title="-04.75">-04.75</option>
+                                                <option value="25" title="-05.00">-05.00</option>
+                                                <option value="24" title="-05.25">-05.25</option>
+                                                <option value="23" title="-05.50">-05.50</option>
+                                                <option value="22" title="-05.75">-05.75</option>
+                                                <option value="21" title="-06.00">-06.00</option>
+                                                <option value="19" title="-06.50">-06.50</option>
+                                                <option value="17" title="-07.00">-07.00</option>
+                                                <option value="15" title="-07.50">-07.50</option>
+                                                <option value="13" title="-08.00">-08.00</option>
+                                                <option value="12" title="-08.50">-08.50</option>
+                                                <option value="11" title="-09.00">-09.00</option>
+                                                <option value="10" title="-09.50">-09.50</option>
+                                                <option value="9" title="-10.00">-10.00</option>
+                                                <option value="76" title="-10.50">-10.50</option>
+                                                <option value="75" title="-11.00">-11.00</option>
+                                                <option value="74" title="-11.50">-11.50</option>
+                                                <option value="73" selected="selected" title="-12.00">-12.00</option>
+                                                <option value="45" title="00.00">00.00</option>
+                                            </select>
+                                        </div>
+                                    <div *ngIf="isContactLens">
+                                        <label class="attribute_label" for="group_4">Radio:&nbsp;</label>
+                                        <div class="attribute_list">
+                                            <select [(ngModel)]="radio" name="radio" class="form-control">
+                                                <option value="106" title="08.50">08.50</option>
+                                                <option value="107" selected="selected" title="09.00">09.00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="isContactLens" >
+                                        <label class="attribute_label" for="group_3">Diametro:&nbsp;</label>
+                                        <div class="attribute_list">
+                                            <select [(ngModel)]="diameter"  name="diameter"class="form-control">
+                                                <option value="7" selected="selected" title="14.2">14.2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="isContactLens">
+                                        <label class="attribute_label" for="group_1">Ojo:&nbsp;</label>
+                                        <div class="attribute_list">
+                                            <select [(ngModel)]="eye" name="eye" class="form-control">
+                                                <option value="2" title="Derecho">Derecho</option>
+                                                <option value="1" selected="selected" title="Izquierdo">Izquierdo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <hr>
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <div class="certified">
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Tiempo de entrega: <span>7 días laborales</span></a></li>
+                                        <li><a href="javascript:void(0);">Certified: <span>Quality Assured</span></a></li>
+                                    </ul>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <div class="description description-tabs">
+
+                                    <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane fade active in" id="more-information">
+                                            <br>
+                                            <strong>Descripción</strong>
+                                            <p>{{product.description}}</p>
+                                        </div>
+                                        <input type="hidden" name="image"  value="http://lorempixel.com/300/300/fashion"/>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <div class="description description-tabs">
+
+                                    <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane fade active in" id="more-information">
+                                            <br>
+                                            <strong>Referencia:  LA3</strong>
+                                            <p>Lente de contacto de hidrogel. El componente usado en su fabricación es altamente hidratante y aporta gran comodidad a lo largo del día. Contiene filtro UV. Cada caja contiene 30 unidades. </p>
+                                        </div>
+                                        <input type="hidden" name="image"  value="http://lorempixel.com/300/300/fashion"/>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                                    <!--  <a href="/usercart_post" class="btn btn-success btn-lg">Añadir al carrito(19,34€)</a>
+                                -->
+
+                                    <input *ngIf="globalInfo.userInfo != null" type="submit" class="btn btn-success btn-lg" value="Add to Cart" (click)="addToCart()">
+                                    <input *ngIf="globalInfo.userInfo == null" type="submit" class="btn btn-success btn-lg" value="Regístrate para comprar"/>
+                                </div>
+                            </div>
+
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

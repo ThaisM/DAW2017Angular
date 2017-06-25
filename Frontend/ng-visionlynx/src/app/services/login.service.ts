@@ -2,11 +2,12 @@ import {Injectable} from "@angular/core";
 import { Http, RequestOptions, Headers } from '@angular/http';
 import {Info} from "../classes/Info";
 import 'rxjs/Rx';
+import {ShoppingCartService} from "./shoppingcart.service";
 
 @Injectable()
 export class LoginService{
 
-    constructor(private http: Http){
+    constructor(private http: Http, private _shoppingCart: ShoppingCartService){
         this.reqIsLogged();
     }
 
@@ -32,6 +33,9 @@ export class LoginService{
     private processLogInResponse(response){
         Info.userInfo = response.json();
         Info.isAdminLogged = Info.userInfo.roles.indexOf("ROLE_ADMIN") !== -1;
+        this._shoppingCart.getProductsList().subscribe(cart => {
+            Info.numberProducts = cart.length;
+        })
     }
 
     logIn(user: string, pass: string) {

@@ -10,15 +10,15 @@
           <li><a href="#" id="cart"><span class="fa fa-shopping-cart"></span><span class="badge">3</span></a></li>
           -->
           <li>
-            <a href="/usercart">Carrito
+            <a routerLink="/cart" >Carrito
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
-                        		   <span class="badge">1</span></span>
+                        		   <span class="badge">{{globalInfo.numberProducts}}</span></span>
             </a>
 
 
           </li>
           <li *ngIf="globalInfo.userInfo == null" ><a routerLink="/login" >Iniciar sesión  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-          <li *ngIf="globalInfo.userInfo != null && !globalInfo.isAdminLogged" ><a routerLink="/login" >Mi perfil <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+          <li *ngIf="globalInfo.userInfo != null && !globalInfo.isAdminLogged" ><a routerLink="/profile" >Mi perfil <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
             <li *ngIf="globalInfo.userInfo != null && globalInfo.isAdminLogged" ><a routerLink="/login" >Panel Admin <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
           <li><a href="#">Ayuda <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
         </ul>
@@ -63,7 +63,7 @@
                       <li class="divider"></li>
                       <div *ngIf="products != null">
                           <div *ngFor="let product of products">
-                              <li *ngIf="product.type=='lentillas' && product.subtype=='Diarias'" class="dropdown-item"><a>{{product.name}}</a></li>
+                              <li *ngIf="product.type=='lentillas' && product.subtype=='Diarias'" class="dropdown-item"><a [routerLink]="['/product/', product.id]" >{{product.name}}</a></li>
                           </div>
                       </div>
                     </ul>
@@ -75,7 +75,7 @@
                       <li class="divider"></li>
                         <div *ngIf="products != null">
                             <div *ngFor="let product of products">
-                                <li *ngIf="product.type=='lentillas' && product.subtype=='Quincenales'" class="dropdown-item"><a>{{product.name}}</a></li>
+                                <li *ngIf="product.type=='lentillas' && product.subtype=='Quincenales'" class="dropdown-item"><a [routerLink]="['/product/', product.id]">{{product.name}}</a></li>
                             </div>
                         </div>
                     </ul>
@@ -87,7 +87,7 @@
                       <li class="divider"></li>
                         <div *ngIf="products != null">
                             <div *ngFor="let product of products">
-                                <li *ngIf="product.type=='lentillas' && product.subtype=='Mensuales'" class="dropdown-item"><a>{{product.name}}</a></li>
+                                <li *ngIf="product.type=='lentillas' && product.subtype=='Mensuales'" class="dropdown-item"><a [routerLink]="['/product/', product.id]">{{product.name}}</a></li>
                             </div>
                         </div>
                     </ul>
@@ -104,7 +104,7 @@
                         <h5><a href="#">Líquidos</a></h5> </li>
                         <div *ngIf="products != null">
                             <div *ngFor="let product of products">
-                                <li *ngIf="product.type=='liquidosyaccesorios' && product.subtype=='Liquidos'" class="dropdown-item"><a>{{product.name}}</a></li>
+                                <li *ngIf="product.type=='liquidosyaccesorios' && product.subtype=='Liquidos'" class="dropdown-item"><a [routerLink]="['/product/', product.id]">{{product.name}}</a></li>
                             </div>
                         </div>
                     </ul>
@@ -115,7 +115,7 @@
                         <h5><a href="#">Accesorios</a></h5> </li>
                         <div *ngIf="products != null">
                             <div *ngFor="let product of products">
-                                <li *ngIf="product.type=='liquidosyaccesorios' && product.subtype=='Accesorios'" class="dropdown-item"><a>{{product.name}}</a></li>
+                                <li *ngIf="product.type=='liquidosyaccesorios' && product.subtype=='Accesorios'" class="dropdown-item"><a [routerLink]="['/product/', product.id]">{{product.name}}</a></li>
                             </div>
                         </div>
                     </ul>
@@ -129,14 +129,14 @@
                   <h5><a href="#">Marcas</a></h5> </li>
                   <div *ngIf="products != null">
                       <div *ngFor="let product of products">
-                          <li *ngIf="product.type=='gafas de sol' && product.subtype=='Marca'" class="dropdown-item"><a>{{product.name}}</a></li>
+                          <li *ngIf="product.type=='gafas de sol' && product.subtype=='Marca'" class="dropdown-item"><a [routerLink]="['/product/', product.id]">{{product.name}}</a></li>
                       </div>
                   </div>
               </ul>
             </li>
             <!--  <li class="dropdown"><a href="/offers" class="dropdown-toggle" data-toggle="dropdown">Ofertas</a> </li>
         -->
-            <li class="dropdown"><a href="/offers" >Ofertas</a> </li>
+            <li class="dropdown"><a routerLink="/offers">Ofertas</a> </li>
 
           </ul>
           <!-- BUSCADOR -->

@@ -13,6 +13,7 @@ export class AppComponent {
 
     globalInfo: Info;
     products: Product[];
+    numberProducts:number;
 
     constructor(private _loginService: LoginService, private router: Router,
         private _productService: ProductService){
@@ -26,6 +27,8 @@ export class AppComponent {
         }, error => {
             console.log(error);
         })
+        this._loginService.reqIsLogged();
+        this.numberProducts = Info.numberProducts;
     }
 
     logOut(){

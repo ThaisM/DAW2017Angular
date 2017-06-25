@@ -1,0 +1,255 @@
+
+<div class="container">
+    <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bs-component">
+
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Su Carrito</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bs-component">
+
+                    <ul class="nav nav-tabs">
+                        <li class="disabled"><a href="#carrito" data-toggle="tab"
+                                                aria-expanded="false"> <i
+                            class="glyphicon glyphicon-shopping-cart"></i> Carrito
+                        </a></li>
+                        <li class="active"><a data-toggle="tab" aria-expanded="true">
+                            Finalizar pedido</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+
+        <div class="row">
+            <!-- Inicio Carrito -->
+            <div class="col-xs-12">
+
+                <div id="myTabContent" class="tab-content">
+
+                    <!------------------------->
+                    <!-- aqui iria el carrito con el fade active -->
+
+
+
+                    <div class="tab-pane fade active in" id="confirmarpedido">
+
+                        <form class="form-horizontal" role="form" action="/confirm/cart" method="post"
+                              enctype="multipart/form-data">
+                            <div class="well text-center">
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12 text-left">
+
+
+
+                                        <!-- Form Name -->
+                                        <legend>
+                                            Método de Pago <img class="img-responsive pull-right"
+                                                                src="http://i76.imgup.net/accepted_c22e0.png">
+                                        </legend>
+
+                                        <!-- <div class="alert alert-dismissible alert-info">
+        Elija primero su forma de pago
+                    </div> -->
+                                        <br>
+                                        <div class="form-group">
+
+                                            <div class="col-lg-1"></div>
+                                            <div class="col-lg-10">
+                                                <div class="radio">
+                                                    <label for="textinput"> <input type="radio"
+                                                                                   name="paymentmethod" id="optionsRadios1" value="option1"
+                                                                                   checked=""> Pago con tarjeta
+                                                    </label> <label for="textinput"><span
+                                                    class="glyphicon glyphicon-credit-card"> </span> </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label for="textinput"> <input type="radio"
+                                                                                   name="paymentmethod" id="optionsRadios2" value="option2">
+                                                        Pago por transferencia bancaria
+                                                    </label> <label for="textinput"><span
+                                                    class="glyphicon glyphicon-transfer"> </span> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="textArea" class="col-lg-1 control-label"></label>
+                                            <div class="col-lg-10">
+													<textarea class="form-control" rows="3" id="textArea"
+                                                              placeholder="Si desea dejarnos un comentario acerca de su pedido, por favor escríbalo a continuación."></textarea>
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="textArea" class="col-lg-1 control-label"></label>
+                                            <div class="col-lg-10">
+                                                <div class="checkbox">
+                                                    <label> <input type="checkbox"> Estoy de
+                                                        acuerdo con las Condiciones generales de venta y las
+                                                        acepto incondicionalmente <a href="#">(leer) </a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <br>
+
+
+                                    </div>
+                                    <div class="col-sm-5 col-xs-12 text-left">
+
+                                        <!--<fieldset> -->
+
+                                        <!-- Form Name -->
+                                        <legend>Dirección de Envío</legend>
+
+                                        <!-- Text input-->
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                                   for="textinput">Dirección*</label>
+                                            <div class="col-md-10 col-sm-9 col-xs-12">
+                                                <input type="text" value="C/Pintor Velázquez 79"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                                   for="textinput">Ciudad*</label>
+                                            <div class="col-md-10 col-sm-9 col-xs-12">
+                                                <input type="text" value="Móstoles" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                                   for="textinput">Provincia*</label>
+                                            <div class="col-md-10 col-sm-9 col-xs-12">
+                                                <input type="text" value="Madrid" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                                   for="textinput">CP*</label>
+                                            <div class="col-md-10 col-sm-9 col-xs-12">
+                                                <input type="text" value="28935" class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                                   for="textinput">País*</label>
+                                            <div class="col-md-10 col-sm-9 col-xs-12">
+
+                                                <select id="country" name="country" class="form-control">
+                                                    <option value="AT">Austria</option>
+                                                    <option value="BE">Bélgica</option>
+                                                    <option value="CA">Canadá</option>
+                                                    <option value="DK">Dinamarca</option>
+                                                    <option value="FI">Finlandia</option>
+                                                    <option value="FR">Francia</option>
+                                                    <option value="DE">Alemania</option>
+                                                    <option value="GR">Greece</option>
+                                                    <option value="IT">Italia</option>
+                                                    <option value="PT">Portugal</option>
+                                                    <option value="ES" selected="selected">España</option>
+                                                    <option value="GB">Reino Unido</option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                                   for="textinput">Teléfono</label>
+                                            <div class="col-md-10 col-sm-9 col-xs-12">
+                                                <input type="text" value="660955559" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="alert alert-dismissible alert-info">Si
+                                            desea modificar sus datos de envío, sobreescriba en los
+                                            campos arriba indicados.</div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-6 col-sm-6"></div>
+                                            <div class="col-md-6 col-sm-6 xs-12">
+                                                <div class=" col-md-2 col-sm-0 col-xs-0"></div>
+                                                <div class=" col-md-5 col-sm-6 col-xs-6">
+                                                    <a routerLink="/cart" type="button"
+                                                       class="btn btn-primary btn-sm">Atrás</a>
+                                                </div>
+                                                <div class="col-md-5 col-sm-6 col-xs-6">
+
+                                                    <input type="hidden" name="paymentmethod" value="card" />
+                                                    <input type='submit' value='Continuar' routerLink="/creditcardpayment">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-xs-1"></div>
+
+                </div>
+                <!-- fin  class row-->
+
+
+            </div>
+            <!-- fin  well -->
+
+
+
+
+
+        </div>
+
+    </div>
+    <!-- fin mytabContent -->
+
+
+</div>
