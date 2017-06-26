@@ -7,8 +7,6 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import es.urjc.code.practica.images.Image;
-
 @Entity
 public class Product {
 	
@@ -96,60 +94,6 @@ public class Product {
 		this.description = description;
 		this.offer = offer;
 	}
-	
-	/*
-	// GAFAS DE SOL
-	public Product(String name, String brand, String model, String reference, String type, String colour, 
-			String size, Boolean published, Double price, Integer quantity, String image, String description) {
-		super();
-		this.name = name;
-		this.brand = brand;
-		this.model = model;
-		this.reference = reference;
-		this.type = type;
-		this.colour = colour;
-		this.size = size;
-		this.published = published;
-		this.price = price;
-		this.quantity = quantity;
-		this.image = image;
-		this.description = description;
-	}
-	
-	// LENTILLAS
-	public Product(String name, String brand, String model, String reference, String type, Double sphere, 
-			Double radio, Boolean published, Double price, Integer quantity, String image, String description) {
-		super();
-		this.name = name;
-		this.brand = brand;
-		this.model = model;
-		this.reference = reference;
-		this.type = type;
-		this.sphere = sphere;
-		this.radio = radio;
-		this.published = published;
-		this.price = price;
-		this.quantity = quantity;
-		this.image = image;
-		this.description = description;
-	}
-	
-	// LIQUIDOS Y ACCESORIOS
-	public Product(String name, String brand, String model, String reference, String type, Boolean published, 
-			Double price, Integer quantity, String image, String description) {
-		super();
-		this.name = name;
-		this.brand = brand;
-		this.model = model;
-		this.reference = reference;
-		this.type = type;
-		this.published = published;
-		this.price = price;
-		this.quantity = quantity;
-		this.image = image;
-		this.description = description;
-	}
-	*/
 
 	public String getSubtype() {
 		return subtype;

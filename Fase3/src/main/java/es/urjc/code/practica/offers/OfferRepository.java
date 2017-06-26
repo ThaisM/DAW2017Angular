@@ -12,8 +12,4 @@ public interface OfferRepository extends JpaRepository<Offer, Long> {
  
     Offer findById(Long id);
 
-	//Page<Offer> findAll(Pageable page);
-
-
-
 }

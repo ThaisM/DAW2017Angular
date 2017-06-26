@@ -17,10 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-
-import es.urjc.code.practica.images.Image;
-import es.urjc.code.practica.images.ImageRepository;
-
 @RestController
 public class UserRestController {
 	

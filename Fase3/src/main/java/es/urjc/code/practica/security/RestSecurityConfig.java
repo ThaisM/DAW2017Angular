@@ -17,8 +17,6 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
-		http.antMatcher("/api/**");
 		
 		// URLs that need authentication to access to it
 		/*http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/books/**").hasRole("USER");
@@ -29,7 +27,6 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/users/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/orders/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/offersPage/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/image/uploadToProduct/**").hasRole("ADMIN");
 		
 		//http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/products/**").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/products/**").hasRole("ADMIN");

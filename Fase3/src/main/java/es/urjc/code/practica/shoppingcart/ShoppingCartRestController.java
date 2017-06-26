@@ -1,7 +1,6 @@
 package es.urjc.code.practica.shoppingcart;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.annotation.JsonView;
-import es.urjc.code.practica.images.Image;
-import es.urjc.code.practica.images.ImageRepository;
-import es.urjc.code.practica.user.User;
 import es.urjc.code.practica.user.UserComponent;
 import es.urjc.code.practica.shoppingcart.OrderCart;
 
@@ -215,13 +210,8 @@ public class ShoppingCartRestController {
     				break;
     			}
     		}	
-    	} 
+    	}
     	
-    	//System.out.println("cart");
-    	//session.setAttribute("cart", lst);
-    	//session.setAttribute("total", getTotal(lst));
-    	
-    	//model.addAttribute("total",getTotal(lst));
     	return "Producto Eliminado";
     	
     	

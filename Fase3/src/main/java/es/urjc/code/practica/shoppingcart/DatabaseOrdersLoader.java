@@ -62,21 +62,6 @@ public class DatabaseOrdersLoader {
 		
 		repository.save(order3);
 		repository.save(order4);
-/*		
-		Player p1 = new Player("Torres", 10);
-		Player p2 = new Player("Iniesta", 10);
-		
-		playerRepository.save(p1);
-		playerRepository.save(p2);
-		
-		Team team = new Team("Selección", 1);
-		
-		team.getPlayers().add(p1);
-		team.getPlayers().add(p2);
-
-		teamRepository.save(team);*/
-		
-		
 		
 	}
 	

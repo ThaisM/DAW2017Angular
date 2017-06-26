@@ -12,5 +12,4 @@ public interface OrderCartRepository extends JpaRepository<OrderCart, Long>{
 	
 	OrderCart findByPrice (Double price);
 
-
 }
